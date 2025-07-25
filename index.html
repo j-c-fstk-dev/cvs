@@ -3,22 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Cristo - My CVs</title>
+    <title>Jorge Cristo - My Professional Documents</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Quicksand', sans-serif; background: linear-gradient(to bottom right, #eff6f0, #e6f0eb); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .card { background-color: #ffffff; padding: 3rem; border-radius: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); text-align: center; }
-        h1 { color: #004d40; font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .link-button { display: inline-block; background-color: #00685c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 0.75rem; transition: background-color 0.3s ease; }
-        .link-button:hover { background-color: #004d40; }
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom right, #eff6f0, #e6f0eb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333333;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 650px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #004d40;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: #555555;
+        }
+        .divider {
+            width: 80%;
+            height: 2px;
+            background-color: #c9d8d6;
+            margin: 2.5rem 0;
+        }
+        .category-heading {
+            color: #00685c; /* A slightly lighter, vibrant green for category titles */
+            font-size: 1.75rem; /* Larger than subtitle, smaller than H1 */
+            font-weight: 600;
+            margin-top: 2rem; /* Space above category heading */
+            margin-bottom: 1.5rem; /* Space below category heading */
+            position: relative;
+            padding-bottom: 0.5rem; /* For a subtle underline effect */
+        }
+        .category-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 50px; /* Short underline */
+            height: 2px;
+            background-color: #004d40;
+        }
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            align-items: center;
+            margin-bottom: 2rem; /* Space below each button group */
+        }
+        .link-button {
+            background-color: #00685c;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: fit-content;
+            min-width: 280px;
+        }
+        .link-button:hover {
+            background-color: #004d40;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        @media (min-width: 768px) {
+            .button-group {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .link-button {
+                margin: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Welcome to Jorge Cristo's CVs</h1>
-        <a href="./dev-en/" class="link-button">Full-Stack Developer CV (English)</a>
-        <a href="./tradutor-en/" class="link-button">Freelance Translator CV (English)</a>
-        <a href="./tradutor-pt/" class="link-button">Currículo de Tradutor Freelancer (Português)</a>
+        <h1>Welcome to Jorge Cristo's Professional Documents</h1>
+        <p class="subtitle">Explore my curated collection of CVs and my translation portfolio.</p>
+
+        <div class="divider"></div>
+
+        <h2 class="category-heading">Developer Documents</h2>
+        <div class="button-group">
+            <a href="./dev-en/" class="link-button">Full-Stack Developer CV (English)</a>
+            <a href="./dev-pt/" class="link-button">Currículo de Desenvolvedor Full-Stack (Português)</a>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2 class="category-heading">Translator Documents & Portfolio</h2>
+        <div class="button-group">
+            <a href="./tradutor-en/" class="link-button">Freelance Translator CV (English)</a>
+            <a href="./tradutor-pt/" class="link-button">Currículo de Tradutor Freelancer (Português)</a>
+            <a href="./translation-portfolio/" class="link-button">Translation Portfolio</a>
+        </div>
     </div>
 </body>
 </html>
