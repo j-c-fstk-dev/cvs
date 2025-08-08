@@ -92,7 +92,7 @@
             text-decoration: none;
             font-weight: 700;
             transition: all 0.6s ease-in-out;
-            opacity: 0.5; /* Opacidade inicial para o efeito de fade-in */
+            opacity: 0.5;
         }
         .link-button:hover {
             background-color: var(--accent-color);
@@ -100,9 +100,8 @@
             box-shadow: 0 5px 20px rgba(0, 240, 255, 0.3);
             transform: translateY(-3px);
         }
-        /* Estilo para o botão visível na tela */
         .link-button.is-visible {
-            opacity: 1; /* Opacidade total */
+            opacity: 1;
         }
         .link-button.download {
             background-color: var(--accent-color);
@@ -133,25 +132,25 @@
         <div class="category-container">
             <h2 class="category-heading">Developer CVs</h2>
             <div class="button-group">
-                <a href="./dev-en/jorge-cristo-dev-en.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View English CV</a>
-                <a href="./dev-en/jorge-cristo-dev-en.pdf" download class="link-button download">Download English CV</a>
+                <a href="./dev-en/dev-en.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View English CV</a>
+                <a href="./dev-en/dev-en.pdf" download class="link-button download">Download English CV</a>
 
-                <a href="./dev-pt/jorge-cristo-dev-pt.pdf" target="_blank" rel="noopener noreferrer" class="link-button">Ver Currículo em Português</a>
-                <a href="./dev-pt/jorge-cristo-dev-pt.pdf" download class="link-button download">Baixar Currículo em Português</a>
+                <a href="./dev-pt/dev-pt.pdf" target="_blank" rel="noopener noreferrer" class="link-button">Ver Currículo em Português</a>
+                <a href="./dev-pt/dev-pt.pdf" download class="link-button download">Baixar Currículo em Português</a>
             </div>
         </div>
 
         <div class="category-container">
             <h2 class="category-heading">Translator Documents & Portfolio</h2>
             <div class="button-group">
-                <a href="./tradutor-en/jorge-cristo-trad-en.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View Translator CV (EN)</a>
-                <a href="./tradutor-en/jorge-cristo-trad-en.pdf" download class="link-button download">Download Translator CV (EN)</a>
+                <a href="./tradutor-en/tradutor-en.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View Translator CV (EN)</a>
+                <a href="./tradutor-en/tradutor-en.pdf" download class="link-button download">Download Translator CV (EN)</a>
                 
-                <a href="./tradutor-pt/jorge-cristo-trad-pt.pdf" target="_blank" rel="noopener noreferrer" class="link-button">Ver Currículo de Tradutor (PT)</a>
-                <a href="./tradutor-pt/jorge-cristo-trad-pt.pdf" download class="link-button download">Baixar Currículo de Tradutor (PT)</a>
+                <a href="./tradutor-pt/tradutor-pt.pdf" target="_blank" rel="noopener noreferrer" class="link-button">Ver Currículo de Tradutor (PT)</a>
+                <a href="./tradutor-pt/tradutor-pt.pdf" download class="link-button download">Baixar Currículo de Tradutor (PT)</a>
 
-                <a href="./translation-portfolio/translation-portfolio.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View Translation Portfolio</a>
-                <a href="./translation-portfolio/translation-portfolio.pdf" download class="link-button download">Download Translation Portfolio</a>
+                <a href="./translation-portfolio/tradutor-en.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View Translation Portfolio</a>
+                <a href="./translation-portfolio/tradutor-en.pdf" download class="link-button download">Download Translation Portfolio</a>
             </div>
         </div>
     </div>
@@ -161,18 +160,16 @@
             const buttons = document.querySelectorAll('.link-button');
 
             const observerOptions = {
-                root: null, // Observa o viewport
+                root: null,
                 rootMargin: '0px',
-                threshold: 0.5 // Aciona o callback quando 50% do elemento está visível
+                threshold: 0.5
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // O elemento está na área de interseção (centro da tela)
                         entry.target.classList.add('is-visible');
                     } else {
-                        // O elemento saiu da área de interseção
                         entry.target.classList.remove('is-visible');
                     }
                 });
