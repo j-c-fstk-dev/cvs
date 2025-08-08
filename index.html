@@ -5,68 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jorge Cristo - My Professional Documents</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        :root {
+            --bg-color: #0A0A0A;
+            --card-bg: #1A1A1A;
+            --text-color: #FFFFFF;
+            --accent-color: #00F0FF;
+            --secondary-text: #D1D1D1;
+        }
         body {
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(to bottom right, #eff6f0, #e6f0eb);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            color: #333333;
+            color: var(--text-color);
             padding: 1rem;
             box-sizing: border-box;
         }
         .card {
-            background-color: #ffffff;
-            padding: 3rem 2.5rem;
+            background-color: var(--card-bg);
+            padding: 2.5rem 2rem;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.1);
             text-align: center;
-            max-width: 650px;
+            max-width: 750px;
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            border: 1px solid rgba(0, 240, 255, 0.2);
         }
-        h1 {
-            color: #004d40;
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
+        .title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
-            line-height: 1.2;
+            color: var(--text-color);
         }
         .subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            color: #555555;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-text);
         }
-        .divider {
-            width: 80%;
-            height: 2px;
-            background-color: #c9d8d6;
-            margin: 2.5rem 0;
+        .category-container {
+            width: 100%;
+            margin-top: 2rem;
         }
         .category-heading {
-            color: #00685c; /* A slightly lighter, vibrant green for category titles */
-            font-size: 1.75rem; /* Larger than subtitle, smaller than H1 */
-            font-weight: 600;
-            margin-top: 2rem; /* Space above category heading */
-            margin-bottom: 1.5rem; /* Space below category heading */
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 0.5rem; /* For a subtle underline effect */
         }
         .category-heading::after {
             content: '';
             position: absolute;
             left: 50%;
-            bottom: 0;
+            bottom: -5px;
             transform: translateX(-50%);
-            width: 50px; /* Short underline */
-            height: 2px;
-            background-color: #004d40;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 9999px;
         }
         .button-group {
             display: flex;
@@ -74,23 +79,35 @@
             gap: 1rem;
             width: 100%;
             align-items: center;
-            margin-bottom: 2rem; /* Space below each button group */
         }
         .link-button {
-            background-color: #00685c;
-            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
             padding: 1rem 2.5rem;
             border-radius: 10px;
             text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 700;
+            transition: all 0.3s ease;
             width: fit-content;
             min-width: 280px;
         }
         .link-button:hover {
-            background-color: #004d40;
+            background-color: var(--accent-color);
+            color: var(--card-bg);
+            box-shadow: 0 5px 20px rgba(0, 240, 255, 0.3);
             transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .link-button.download {
+            background-color: var(--accent-color);
+            color: var(--card-bg);
+        }
+        .link-button.download:hover {
+            background-color: rgba(0, 240, 255, 0.8);
+            color: var(--card-bg);
         }
         @media (min-width: 768px) {
             .button-group {
@@ -98,32 +115,37 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .link-button {
-                margin: 0.75rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Welcome to Jorge Cristo's Professional Documents</h1>
+        <h1 class="title">Professional Documents</h1>
         <p class="subtitle">Explore my curated collection of CVs and my translation portfolio.</p>
 
-        <div class="divider"></div>
+        <div class="category-container">
+            <h2 class="category-heading">Developer CVs</h2>
+            <div class="button-group">
+                <a href="./dev-en/jorge-cristo-dev-en.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View English CV</a>
+                <a href="./dev-en/jorge-cristo-dev-en.pdf" download class="link-button download">Download English CV</a>
 
-        <h2 class="category-heading">Developer Documents</h2>
-        <div class="button-group">
-            <a href="./dev-en/" class="link-button">Full-Stack Developer CV (English)</a>
-            <a href="./dev-pt/" class="link-button">Currículo de Desenvolvedor Full-Stack (Português)</a>
+                <a href="./dev-pt/jorge-cristo-dev-pt.pdf" target="_blank" rel="noopener noreferrer" class="link-button">Ver Currículo em Português</a>
+                <a href="./dev-pt/jorge-cristo-dev-pt.pdf" download class="link-button download">Baixar Currículo em Português</a>
+            </div>
         </div>
 
-        <div class="divider"></div>
+        <div class="category-container">
+            <h2 class="category-heading">Translator Documents & Portfolio</h2>
+            <div class="button-group">
+                <a href="./tradutor-en/jorge-cristo-trad-en.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View Translator CV (EN)</a>
+                <a href="./tradutor-en/jorge-cristo-trad-en.pdf" download class="link-button download">Download Translator CV (EN)</a>
+                
+                <a href="./tradutor-pt/jorge-cristo-trad-pt.pdf" target="_blank" rel="noopener noreferrer" class="link-button">Ver Currículo de Tradutor (PT)</a>
+                <a href="./tradutor-pt/jorge-cristo-trad-pt.pdf" download class="link-button download">Baixar Currículo de Tradutor (PT)</a>
 
-        <h2 class="category-heading">Translator Documents & Portfolio</h2>
-        <div class="button-group">
-            <a href="./tradutor-en/" class="link-button">Freelance Translator CV (English)</a>
-            <a href="./tradutor-pt/" class="link-button">Currículo de Tradutor Freelancer (Português)</a>
-            <a href="./translation-portfolio/" class="link-button">Translation Portfolio</a>
+                <a href="./translation-portfolio/translation-portfolio.pdf" target="_blank" rel="noopener noreferrer" class="link-button">View Translation Portfolio</a>
+                <a href="./translation-portfolio/translation-portfolio.pdf" download class="link-button download">Download Translation Portfolio</a>
+            </div>
         </div>
     </div>
 </body>
