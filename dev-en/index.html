@@ -1,249 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Cristo - Full-Stack Developer CV</title>
-    <!-- Tailwind CSS CDN for quick styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Importing Quicksand font for a modern, clean, yet sophisticated feel */
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Quicksand', sans-serif;
-            /* Subtle linear gradient background for a calming, less flat tech feel */
-            background: linear-gradient(to bottom right, #eff6f0, #e6f0eb); /* Subtle green-tinted gradient */
-            color: #333333; /* Dark charcoal gray for main text */
-            line-height: 1.7;
-        }
-        .container {
-            max-width: 850px;
-            margin: 2rem auto;
-            padding: 2.5rem;
-            background-color: #ffffff;
-            border-radius: 16px; /* Rounded corners for a modern look */
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Prominent but elegant shadow */
-            border: 1px solid #d1d5db; /* Light gray subtle border */
-        }
-        h1 {
-            color: #004d40; /* Dark green for main heading, matching translator's elegance */
-            font-weight: 700; /* Bold for impact */
-            letter-spacing: -0.025em; /* Slightly tighter letter spacing */
-        }
-        h2, h3 {
-            color: #004d40; /* Dark green for section headings */
-            font-weight: 700; /* Bold */
-        }
-        .section-divider {
-            border-top: 1px solid #c9d8d6; /* Subtle green-tinted line, consistent with translator CV */
-            margin: 2rem 0;
-        }
-        a {
-            color: #004d40; /* Dark green links */
-            text-decoration: none;
-            font-weight: 600;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul.list-disc li {
-            margin-bottom: 0.5rem;
-        }
-        /* Custom styling for skill categories to add more flair */
-        .skill-category-title {
-            color: #00685c; /* A slightly lighter, vibrant green for skill sub-titles */
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            font-size: 1.125rem; /* Equivalent to text-lg */
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jorge Cristo - Full-Stack Developer CV</title>
+<meta name="description" content="Jorge Cristo, freelance full-stack developer: bug fixing and app rescue, Web3 dApps and smart contract review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ink:#16201F; --muted:#56635F; --line:#D3DCDA; --accent:#1F4F4F; --accent-2:#0E8C8C; --tint:#EEF5F4; --paper:#FFFFFF; --desk:#E6ECEB;
+  --sans:'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
+}
+@page{size:A4;margin:13mm 14mm 13mm 14mm}
+*{box-sizing:border-box}
+html{background:var(--desk)}
+body{margin:0;font-family:var(--sans);color:var(--ink);font-size:9.6pt;line-height:1.42;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{background:var(--paper);max-width:210mm;margin:0 auto}
+@media screen{
+  body{padding:24px 16px}
+  .page{padding:13mm 14mm;box-shadow:0 1px 3px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06)}
+  .dl{max-width:210mm;margin:0 auto 12px;text-align:right;font-size:10pt}
+  .dl a{color:var(--accent);font-weight:600}
+}
+@media print{html,body{background:#fff}.dl{display:none}}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent-2)}
+h1,h2,h3,p{margin:0}
+
+/* header */
+header{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;padding-bottom:9pt;border-bottom:2pt solid var(--accent)}
+h1{font-size:23pt;font-weight:700;letter-spacing:-.01em;line-height:1.05;color:var(--accent)}
+.role{font-size:11pt;font-weight:500;margin-top:4pt}
+.role span{color:var(--muted);font-weight:400}
+.contact{font-family:var(--mono);font-size:8pt;line-height:1.55;text-align:right;color:var(--ink);white-space:nowrap}
+.contact b{font-weight:500;color:var(--accent)}
+
+section{margin-top:11pt;break-inside:avoid-page}
+h2{font-size:8pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);padding-bottom:3pt;border-bottom:.6pt solid var(--line);margin-bottom:6pt}
+.summary{font-size:9.9pt;line-height:1.5}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:6pt}
+.svc{background:var(--tint);border-radius:3pt;padding:6pt 8pt}
+.svc h3{font-size:9.2pt;font-weight:600;margin-bottom:2pt;color:var(--accent)}
+.svc p{font-size:8.6pt;line-height:1.38;color:var(--ink)}
+
+/* jobs */
+.job{break-inside:avoid;margin-top:8pt}
+.job:first-of-type{margin-top:0}
+.jh{display:flex;justify-content:space-between;gap:10pt;align-items:baseline}
+.jh h3{font-size:10.2pt;font-weight:600}
+.jh h3 span{font-weight:400;color:var(--muted)}
+.when{font-family:var(--mono);font-size:8pt;color:var(--muted);white-space:nowrap}
+ul{margin:3pt 0 0;padding-left:12pt}
+li{margin-top:1.5pt}
+li::marker{color:var(--accent-2)}
+.client{margin-top:5pt;padding-left:8pt;border-left:1.5pt solid var(--line)}
+.client .ch{display:flex;justify-content:space-between;gap:10pt;align-items:baseline}
+.client .ch b{font-weight:600}
+.url{font-family:var(--mono);font-size:7.8pt;color:var(--accent-2)}
+.stack{font-family:var(--mono);font-size:7.8pt;color:var(--muted);margin-top:1pt}
+
+/* projects */
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:7pt 16pt}
+.proj{break-inside:avoid}
+.proj .ph{display:flex;flex-direction:column}
+.proj b{font-weight:600}
+.proj p{font-size:8.9pt}
+
+/* skills */
+.skills{display:grid;grid-template-columns:auto 1fr;gap:3pt 12pt;font-size:9.1pt}
+.skills dt{font-weight:600;color:var(--accent);white-space:nowrap}
+.skills dd{margin:0}
+
+.cols{display:grid;grid-template-columns:1.25fr 1fr;gap:16pt}
+.edu p + p{margin-top:3pt}
+.earlier li{margin-top:2.5pt}
+.pb{break-before:page}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header class="text-center mb-10">
-            <h1 class="text-5xl mb-2">Jorge Augusto Medeiros Lopes</h1>
-            <p class="text-2xl font-semibold text-gray-700">(Professional Name: Jorge Cristo)</p>
-            <p class="text-xl text-gray-800 mt-3">Freelance Full-Stack Developer | AI/ML & Web3 Enthusiast</p>
-        </header>
+<p class="dl"><a href="Jorge%20Cristo%20-%20Full-Stack%20Developer%20CV.pdf" download>Download PDF</a></p>
+<div class="page">
 
-        <section class="mb-8">
-            <h3 class="text-2xl mb-3">Contact</h3>
-            <ul class="list-none p-0 m-0 text-lg">
-                <li><span class="font-bold">Email:</span> jorge.dev.c@gmail.com</li>
-                <li><span class="font-bold">Phone:</span> +55 (12) 98254-9745</li>
-                <li><span class="font-bold">GitHub:</span> <a href="https://github.com/j-c-fstk-dev/" target="_blank" rel="noopener noreferrer">github.com/j-c-fstk-dev/</a></li>
-                <li><span class="font-bold">Portfolio:</span> <a href="https://jcdevportfolio.netlify.app/" target="_blank" rel="noopener noreferrer">https://jcdevportfolio.netlify.app/</a></li>
-                <li><span class="font-bold">Location:</span> Brazil</li>
-            </ul>
-        </section>
+<header>
+  <div>
+    <h1>Jorge Cristo</h1>
+    <p class="role">Full-Stack Developer <span>· Bug fixing &amp; app rescue · Web3 / Solidity</span></p>
+  </div>
+  <div class="contact">
+    <a href="mailto:dev.jorge.c@gmail.com">dev.jorge.c@gmail.com</a><br>
+    <b>WhatsApp</b> +55 12 99218-5685<br>
+    <a href="https://github.com/j-c-fstk-dev">github.com/j-c-fstk-dev</a><br>
+    <a href="https://jcdevportfolio.netlify.app">jcdevportfolio.netlify.app</a><br>
+    Brazil · UTC−3 · overlaps US hours
+  </div>
+</header>
 
-        <div class="section-divider"></div>
+<section>
+  <h2>Summary</h2>
+  <p class="summary">Full-stack developer with 3 years of freelance work and around 20 projects delivered, many of them production apps for clients in Web3, climate and community projects. I take over existing codebases and get them working: debugging, broken builds and deploys, database and auth issues, and new features on top. On the Web3 side I build dApps and Farcaster mini apps and review Solidity contracts. A background in production engineering shapes how I work: diagnose first, agree on a fixed scope, deliver on a separate branch with a clear write-up.</p>
+</section>
 
-        <section class="mb-8">
-            <h2 class="text-3xl mb-4">Professional Summary</h2>
-            <p class="leading-relaxed">
-                Highly motivated and self-taught Full-Stack Developer with a strong passion for building innovative digital solutions, particularly at the intersection of <strong>web development</strong>, <strong>Web3 technologies</strong>, and <strong>artificial intelligence</strong>. Proficient across a wide range of programming languages, frameworks, and databases, with a keen interest in Machine Learning, Large Language Models (LLMs), and cloud platforms. My diverse background, including engineering and content creation, has cultivated exceptional problem-solving abilities, a proactive approach to learning, and a talent for transforming complex ideas into functional applications and engaging user experiences. Actively working on personal projects and a dedicated portfolio to showcase a robust and versatile skill set.
-            </p>
-        </section>
+<section>
+  <h2>What I do</h2>
+  <div class="services">
+    <div class="svc"><h3>Bug fixing &amp; app rescue</h3><p>React, Next.js and Node apps, including ones built with Lovable, Bolt or Cursor: build and deploy errors, auth, Supabase and database rules, broken integrations.</p></div>
+    <div class="svc"><h3>Web3 &amp; smart contracts</h3><p>dApps on EVM chains (Celo, Ethereum), Solidity contract review, wallet flows, Farcaster mini apps, account abstraction.</p></div>
+    <div class="svc"><h3>Features &amp; automation</h3><p>New pages and features end to end, Stripe payments, AI/LLM integrations, n8n and Zapier workflows, Python data apps.</p></div>
+  </div>
+</section>
 
-        <div class="section-divider"></div>
+<section>
+  <h2>Experience</h2>
 
-        <section class="mb-8">
-            <h2 class="text-3xl mb-4">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-lg">
-                <div>
-                    <h4 class="skill-category-title">Programming Languages:</h4>
-                    <ul class="list-disc ml-5">
-                        <li>JavaScript, TypeScript</li>
-                        <li>Python, C++</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category-title">Front-end:</h4>
-                    <ul class="list-disc ml-5">
-                        <li>React, Angular</li>
-                        <li>Tailwind CSS, HTML5, CSS3</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category-title">Back-end:</h4>
-                    <ul class="list-disc ml-5">
-                        <li>Node.js, Express.js</li>
-                        <li>Spring Boot (Java)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="skill-category-title">Databases:</h4>
-                    <ul class="list-disc ml-5">
-                        <li>PostgreSQL, MySQL</li>
-                        <li>MongoDB, Firebase Firestore, SQL Server</li>
-                    </ul>
-                </div>
-                <div class="col-span-1 md:col-span-2 lg:col-span-1">
-                    <h4 class="skill-category-title">Tools & Platforms:</h4>
-                    <ul class="list-disc ml-5">
-                        <li>Git (GitHub), Firebase</li>
-                        <li>Docker (basic proficiency)</li>
-                        <li>RESTful APIs</li>
-                        <li>Cloud Platforms (GCP)</li>
-                        <li>SEO principles, CMS</li>
-                    </ul>
-                </div>
-                <div class="col-span-1 md:col-span-2">
-                    <h4 class="skill-category-title">AI/ML & Development Environments:</h4>
-                    <ul class="list-disc ml-5 grid grid-cols-1 md:grid-cols-2 gap-x-4">
-                        <li><strong>AI/ML/LLM Concepts:</strong> Machine Learning, Large Language Models, Artificial Intelligence</li>
-                        <li><strong>AI Tools:</strong> Gemini, Claude, ChatGPT, Grok, GitHub Copilot, Manus</li>
-                        <li><strong>IDEs & Dev Tools:</strong> Firebase (IDE/Platform), Cursor, Onlook, Jarvis (familiarity/exploration), VS Code</li>
-                    </ul>
-                </div>
-                <div class="col-span-1 md:col-span-2">
-                    <h4 class="skill-category-title">Web3 Technologies (Exploring):</h4>
-                    <ul class="list-disc ml-5 grid grid-cols-1 md:grid-cols-2 gap-x-4">
-                        <li><strong>Concepts:</strong> Blockchain, Decentralized Applications (DApps), Smart Contracts, NFTs, DeFi</li>
-                        <li><strong>Tools/Libraries:</strong> Ethers.js, Web3.js (for interaction)</li>
-                        <li><strong>Platforms:</strong> Ethereum Ecosystem (general understanding)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+  <div class="job">
+    <div class="jh"><h3>Freelance Full-Stack Developer <span>· remote</span></h3><span class="when">2023 – present</span></div>
+    <p>Client work across Web3, environmental and community organizations, including projects under NDA.</p>
 
-        <div class="section-divider"></div>
-
-        <section class="mb-8">
-            <h2 class="text-3xl mb-4">Projects & Portfolio</h2>
-            <ul class="list-disc ml-5 text-lg">
-                <li>Actively developing a comprehensive online portfolio showcasing various full-stack applications and projects.</li>
-                <li>Numerous personal projects available on GitHub, demonstrating proficiency in diverse technologies and problem-solving approaches. <a href="https://github.com/j-c-fstk-dev/" target="_blank" rel="noopener noreferrer">github.com/j-c-fstk-dev/</a></li>
-                <ul class="list-circle ml-8 text-base">
-                    <li><em><strong>Examples include Web3 applications, AI-powered tools, and various web development projects.</strong></em></li>
-                </ul>
-            </ul>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section class="mb-8">
-            <h2 class="text-3xl mb-4">Experience</h2>
-
-            <div class="mb-5">
-                <h3 class="text-2xl font-semibold">Content Creator/ Social Media Administrator | NftreesBrasil, Beregenerative.life, Greenpill Brasil, ReFIDAO</h3>
-                <p class="text-gray-600 text-base mb-2">2021 – 2025 (3 years)</p>
-                <ul class="list-disc ml-6">
-                    <li><strong>Developed and maintained digital content infrastructure</strong> for Web3 projects, including blogs and marketing platforms.</li>
-                    <li>Implemented <strong>SEO strategies</strong> to optimize content visibility and audience reach.</li>
-                    <li>Contributed to the <strong>development of technical documentation</strong> for blockchain and decentralized platforms, ensuring clarity and accuracy of complex information.</li>
-                    <li>Managed community platforms, requiring effective technical communication and problem-solving in a dynamic environment.</li>
-                    <li><em>Engaged in building specific applications within this ecosystem.</em></li>
-                </ul>
-            </div>
-
-            <div class="mb-5">
-                <h3 class="text-2xl font-semibold">Owner | Brincando em Família Ateliê</h3>
-                <p class="text-gray-600 text-base mb-2">2019 – 2025 (8 years)</p>
-                <ul class="list-disc ml-6">
-                    <li><strong>Managed and optimized e-commerce platforms</strong>, overseeing product presentation and customer engagement.</li>
-                    <li>Implemented <strong>digital marketing strategies</strong> including social media campaigns and email marketing, often involving custom content and integration.</li>
-                    <li><strong>Created and managed website content and product descriptions</strong>, applying principles of user experience and clear communication.</li>
-                    <li><em>Involved in the creation and maintenance of company websites.</em></li>
-                </ul>
-            </div>
-
-            <div class="mb-5">
-                <h3 class="text-2xl font-semibold">Train Operator | Estrada de Ferro Campos do Jordão</h3>
-                <p class="text-gray-600 text-base mb-2">2015 – 2023 (8 years)</p>
-                <ul class="list-disc ml-6">
-                    <li>Developed strong <strong>problem-solving skills</strong> in troubleshooting and operating complex electromechanical systems.</li>
-                    <li>Honed <strong>attention to detail and adherence to strict protocols</strong>, crucial for system integrity and safety.</li>
-                    <li>Practiced <strong>clear and concise communication</strong> in high-pressure public-facing roles.</li>
-                </ul>
-            </div>
-
-            <div class="mb-5">
-                <h3 class="text-2xl font-semibold">Engineering Assistant | Zodiac Pharmaceutics</h3>
-                <p class="text-gray-600 text-base mb-2">2010 – 2014 (4 years)</p>
-                <ul class="list-disc ml-6">
-                    <li>Contributed to the <strong>creation and optimization of technical systems</strong> (e.g., cost control, maintenance orders).</li>
-                    <li>Gained experience in <strong>technical documentation and process improvement</strong>, skills directly transferable to software development lifecycle.</li>
-                    <li>Managed technical workflows, demonstrating <strong>organizational and analytical abilities</strong>.</li>
-                </ul>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section class="mb-8">
-            <h2 class="text-3xl mb-4">Education</h2>
-            <h3 class="text-2xl font-semibold">Bachelor's Degree in Production Engineering</h3>
-            <p class="text-gray-600 text-base">FUNVIC | Brazil (2015)</p>
-            <div class="mt-4">
-                <h3 class="text-2xl font-semibold">Self-Taught & Continuous Learning:</h3>
-                <ul class="list-disc ml-6">
-                    <li>Harvard CS50</li>
-                    <li>FreeCodeCamp (FCC) curriculum</li>
-                    <li>Google Courses (ongoing)</li>
-                    <li>DIO (Digital Innovation One) learning paths</li>
-                    <li>Extensive independent study through practical application, error resolution, and information seeking, continuously expanding knowledge in diverse programming domains.</li>
-                </ul>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section>
-            <h2 class="text-3xl mb-4">Soft Skills</h2>
-            <ul class="list-disc ml-6 text-lg grid grid-cols-1 md:grid-cols-2 gap-x-6">
-                <li>Rapid Learning & Adaptability (especially in emerging tech like AI/ML, Web3)</li>
-                <li>Exceptional Problem-Solving</li>
-                <li>Proactive Information Seeking & Research</li>
-                <li>Strong Independent Work Ethic</li>
-                <li>Effective Collaboration (when in groups)</li>
-                <li>Analytical & Observational</li>
-                <li>Dynamic & Organized</li>
-                <li>Visionary & Innovative Thinking</li>
-            </ul>
-        </section>
+    <div class="client">
+      <div class="ch"><b>DeCleanup Network</b><span class="url">dapp.decleanup.net · miniapp.decleanup.net</span></div>
+      <ul>
+        <li>Full-stack developer on a Web3 platform that coordinates and rewards real-world cleanups, plus its Farcaster mini app; used by 100+ people across community cleanup groups.</li>
+        <li>Fixed production bugs and shipped new features across front end, back end and database.</li>
+        <li>Reviewed Solidity smart contracts and built front-end pages and flows connected to them.</li>
+      </ul>
+      <p class="stack">TypeScript · React · Node.js · Solidity · Celo · Farcaster</p>
     </div>
+
+    <div class="client">
+      <div class="ch"><b>Bass Forest</b><span class="url">bassforest.earth</span></div>
+      <ul><li>Designed and built from scratch, solo, the website for an annual global electronic music festival tied to World Environment Day and tree planting.</li></ul>
+      <p class="stack">TypeScript · React</p>
+    </div>
+
+    <div class="client">
+      <div class="ch"><b>Monthly Earth Day</b><span class="url">monthlyearthday.org</span></div>
+      <ul><li>Designed and built from scratch, solo, the community hub for monthly environmental actions.</li></ul>
+      <p class="stack">TypeScript · React · Node.js</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="jh"><h3>Founder &amp; Lead Developer <span>· BeRegen</span></h3><span class="when">2023 – present</span></div>
+    <p><span class="url">beregen.xyz</span> · Regenerative infrastructure for communities, connecting real-world action, learning, identity, governance and funding, with fieldwork in the Mantiqueira range, Brazil.</p>
+    <ul>
+      <li>Designed and built the ecosystem site and its product line: RegenImpactHub (identity and impact validation, in beta), RegenFlix (learning platform with Stripe payments), BeRegen App (daily practices, MVP).</li>
+      <li>Designed GOPR, a reputation-based optimistic governance model.</li>
+    </ul>
+    <p class="stack">TypeScript · React · Node.js · Stripe API · Web3</p>
+  </div>
+
+  <div class="job">
+    <div class="jh"><h3>Content, Community &amp; Docs <span>· NFTrees Brasil, Greenpill Brasil, ReFi DAO, Beregenerative.life</span></h3><span class="when">2021 – 2025</span></div>
+    <ul>
+      <li>Built and maintained blogs and marketing sites for Web3 projects, with SEO.</li>
+      <li>Wrote technical documentation for blockchain platforms and ran their community channels.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Selected projects</h2>
+  <div class="projects">
+    <div class="proj"><div class="ph"><b>PassPay</b><span class="url">github.com/j-c-fstk-dev/PassPay</span></div><p>Gasless stablecoin payments using passkeys and account abstraction. Reference implementation.</p><p class="stack">TypeScript · React · Node.js · Web3</p></div>
+    <div class="proj"><div class="ph"><b>Contextual SEO Engine</b><span class="url">contextual-seo-engine.netlify.app</span></div><p>AI-powered marketing content generator, built for a Base44 competition.</p><p class="stack">JavaScript · React · Node.js · LLM APIs</p></div>
+    <div class="proj"><div class="ph"><b>SubGuard AI</b><span class="url">github.com/j-c-fstk-dev/subguard-ai</span></div><p>Analyzes recurring subscriptions with AI and suggests what to cut.</p><p class="stack">Python · TypeScript · Streamlit</p></div>
+    <div class="proj"><div class="ph"><b>LEAP Agent</b><span class="url">github.com/j-c-fstk-dev/LEAP-Agent</span></div><p>Framework for AI automation agents. Prototype.</p><p class="stack">Python · LangChain</p></div>
+    <div class="proj"><div class="ph"><b>FineCoding</b><span class="url">finecoding.netlify.app</span></div><p>Blog template with AI integrations; also my dev blog.</p><p class="stack">TypeScript · React</p></div>
+    <div class="proj"><div class="ph"><b>ClipVault</b><span class="url">github.com/j-c-fstk-dev/clipvault</span></div><p>Clipboard manager with automatic categorization.</p><p class="stack">TypeScript</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>TypeScript, JavaScript, Python, Solidity, SQL, Java, Kotlin</dd>
+    <dt>Front end</dt><dd>React, Next.js, Angular, Vue, Tailwind CSS, HTML, CSS</dd>
+    <dt>Back end</dt><dd>Node.js, Express, REST APIs, Supabase (auth, RLS), Firebase, Stripe API</dd>
+    <dt>Databases</dt><dd>SQL: PostgreSQL, MySQL, SQLite · NoSQL: MongoDB, Firestore · local and browser storage</dd>
+    <dt>Web3</dt><dd>Solidity, EVM (Ethereum, Celo), Solana, Ethers.js, Web3.js, account abstraction, Farcaster mini apps</dd>
+    <dt>Automation &amp; AI</dt><dd>n8n, Zapier, Kommo CRM, Streamlit, LangChain, LLM APIs</dd>
+    <dt>Tooling</dt><dd>Git and GitHub, Linux (daily driver), Netlify, Vercel, Docker, GCP; AI-assisted development with Claude, Cursor and Copilot</dd>
+  </dl>
+</section>
+
+<div class="cols">
+  <section>
+    <h2>Earlier career</h2>
+    <ul class="earlier">
+      <li><b>Owner, Brincando em Família Ateliê</b> <span class="when">2019 – 2025</span><br>Ran the e-commerce store, website and digital marketing.</li>
+      <li><b>Train Operator, Estrada de Ferro Campos do Jordão</b> <span class="when">2015 – 2023</span><br>Operated and troubleshot electromechanical systems under strict safety protocols.</li>
+      <li><b>Engineering Assistant, Zodiac (pharmaceuticals)</b> <span class="when">2010 – 2014</span><br>Built cost-control and maintenance-order systems; process documentation.</li>
+    </ul>
+  </section>
+  <section class="edu">
+    <h2>Education</h2>
+    <p><b>B.Sc. Production Engineering</b><br>FUNVIC, Brazil · 2015</p>
+    <p><b>Blockchain Developer with Solidity</b><br>DIO × Binance bootcamp · 2025</p>
+    <p><b>CS50</b> (Harvard) · freeCodeCamp · DIO learning paths</p>
+    <h2 style="margin-top:10pt">Languages</h2>
+    <p>Portuguese (native) · English (advanced)</p>
+  </section>
+</div>
+
+</div>
 </body>
 </html>
