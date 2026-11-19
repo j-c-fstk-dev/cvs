@@ -306,13 +306,13 @@ function replyOnce(message, line = chat.querySelector('.reply')) {
   if (line && line.isConnected && line.hidden) void typeLine(line, message);
 }
 
-async function transition(message) {
+async function transition(message, duration = 1000) {
   transitioning = true;
   command.value = '';
   if (touch.matches) command.blur();
   command.readOnly = true;
   chat.replaceChildren();
-  await loader(message, 1000);
+  await loader(message, duration);
   command.readOnly = false;
   transitioning = false;
 }
@@ -366,7 +366,7 @@ function thank(message = copy.thanks, line = chat.querySelector('.reply')) {
 
 async function backToMenu(offerContact = true) {
   const previous = selection;
-  await transition(copy.returning);
+  await transition(copy.returning, 350);
   selection = undefined;
   command.placeholder = copy.menuPrompt;
   show('menu');
