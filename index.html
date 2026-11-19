@@ -51,7 +51,7 @@ dialog::backdrop{background:#030806dd}
 iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:block}
 @media(max-aspect-ratio: 1/1){
 .stage{min-height:max(100svh,132vw)}
-.scene{width:290vw;max-width:none;margin-left:7vw;transform:translateY(-16vw)}
+.scene{width:260vw;max-width:none;margin-left:7vw;transform:translateY(-16vw)}
 .crt{font-size:clamp(10px,2.95vw,16px);padding:clamp(10px,3.5vw,20px)}
 .brand{top:20px}.caption{left:auto;right:20px;bottom:18px}
 }
@@ -129,6 +129,7 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
     <button type="button" class="action" id="open" data-copy="actionOpen">Visualizar ↗</button>
     <a class="action" id="download" data-copy="actionDownload">Baixar ↓</a>
     <button type="button" class="action" id="share" data-copy="actionShare">Compartilhar link</button>
+    <button type="button" class="action" id="switch-cv" data-copy="switchMobile" hidden></button>
     <button type="button" class="action" id="back" data-copy="back">Voltar</button>
   </div>
   <p class="reply" role="status" hidden></p>
@@ -149,6 +150,8 @@ const pt = {
   menuPrompt: 'Digite 1, 2, 3 ou help', actionPrompt: 'Digite um comando',
   menuHelp: '1, 2, 3 — escolher currículo',
   actionHelp: '1 — visualizar\n2 — baixar\n3 — compartilhar\nEsc — voltar · Tab — trocar de currículo',
+  switchMobile: '4 Trocar currículo', backMobile: '5 Voltar',
+  actionHelpMobile: '1 — visualizar\n2 — baixar\n3 — compartilhar\n4 — trocar de currículo\n5 — voltar',
   opening: 'Abrindo currículo…', returning: 'Carregando menu…',
   invalid: 'Comando inválido. Digite help.', copied: 'Link copiado.',
   manualShare: 'Copie o link selecionado para compartilhar.',
@@ -169,6 +172,8 @@ const en = {
   menuPrompt: 'Type 1, 2, 3, or help', actionPrompt: 'Type a command',
   menuHelp: '1, 2, 3 — choose a résumé',
   actionHelp: '1 — view\n2 — download\n3 — share\nEsc — back · Tab — switch résumé',
+  switchMobile: '4 Switch résumé', backMobile: '5 Back',
+  actionHelpMobile: '1 — view\n2 — download\n3 — share\n4 — switch résumé\n5 — back',
   opening: 'Opening résumé…', returning: 'Loading menu…',
   invalid: 'Unknown command. Type help.', copied: 'Link copied.',
   manualShare: 'Copy the selected link to share it.',
@@ -190,6 +195,7 @@ const dialog = document.querySelector('#preview');
 const frame = document.querySelector('#document-view');
 const shareDialog = document.querySelector('#share-dialog');
 const shareUrl = document.querySelector('#share-url');
+const touch = matchMedia('(pointer: coarse)');
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
 let selection;
 let documentPath;
@@ -262,7 +268,7 @@ function populateMenu() {
 }
 
 function focusPrompt() {
-  command.focus({preventScroll: true});
+  if (!touch.matches) command.focus({preventScroll: true});
 }
 
 async function boot() {
@@ -303,6 +309,7 @@ function replyOnce(message, line = chat.querySelector('.reply')) {
 async function transition(message) {
   transitioning = true;
   command.value = '';
+  if (touch.matches) command.blur();
   command.readOnly = true;
   chat.replaceChildren();
   await loader(message, 1000);
@@ -316,6 +323,10 @@ async function choose(number) {
   command.placeholder = copy.actionPrompt;
   show('result');
   chat.querySelector('h2').textContent = copy.choices[selection];
+  if (touch.matches) {
+    chat.querySelector('#switch-cv').hidden = false;
+    chat.querySelector('#back').textContent = copy.backMobile;
+  }
   setLanguage(isPortuguese ? 'PT' : 'EN');
   focusPrompt();
 }
@@ -331,7 +342,13 @@ function runCommand(value) {
     }
     return;
   }
-  const message = value === 'help' ? (selection === undefined ? copy.menuHelp : copy.actionHelp) : copy.invalid;
+  if (touch.matches && selection !== undefined && /^[45]$/.test(value)) {
+    void backToMenu(value === '5');
+    return;
+  }
+  const helpText = selection === undefined ? copy.menuHelp
+    : touch.matches ? copy.actionHelpMobile : copy.actionHelp;
+  const message = value === 'help' ? helpText : copy.invalid;
   let help = chat.querySelector('.command-help');
   if (!help) {
     help = document.createElement('p');
@@ -406,8 +423,12 @@ chat.addEventListener('click', event => {
     runCommand(control.dataset.choice);
   }
   if (control.dataset.lang) setLanguage(control.dataset.lang);
+  if (control.id === 'switch-cv') void backToMenu(false);
   if (control.id === 'back') void backToMenu();
-  if (['open', 'download', 'share'].includes(control.id)) chat.querySelector('.command-help')?.remove();
+  if (['open', 'download', 'share'].includes(control.id)) {
+    if (touch.matches) command.blur();
+    chat.querySelector('.command-help')?.remove();
+  }
   if (control.id === 'share') void share();
   if (control.id === 'download') thank();
   if (control.id === 'open') {
@@ -423,7 +444,7 @@ form.addEventListener('submit', event => {
   runCommand(command.value.trim().toLowerCase());
 });
 document.addEventListener('keydown', event => {
-  if (transitioning || selection === undefined || dialog.open || shareDialog.open ||
+  if (touch.matches || transitioning || selection === undefined || dialog.open || shareDialog.open ||
       event.ctrlKey || event.altKey || event.metaKey || event.isComposing) return;
   if (event.key === 'Escape') {
     event.preventDefault();
@@ -436,7 +457,8 @@ document.addEventListener('keydown', event => {
 
 command.addEventListener('keydown', event => {
   if (event.repeat || event.isComposing || event.ctrlKey || event.altKey || event.metaKey ||
-      command.value || !/^[123]$/.test(event.key)) return;
+      command.value || !/^[1-5]$/.test(event.key)) return;
+  if (/^[45]$/.test(event.key) && (!touch.matches || selection === undefined)) return;
   event.preventDefault();
   runCommand(event.key);
 });
