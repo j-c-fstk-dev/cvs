@@ -16,14 +16,15 @@ body{margin:0;background:#06090b;color:#e5eeeb;font:14px ui-monospace,"SFMono-Re
 .brand strong{display:block;font:600 16px system-ui,sans-serif;letter-spacing:.025em}
 .brand small{display:block;color:#a4b7ba;margin-top:4px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
 .caption{position:absolute;left:clamp(22px,4vw,64px);bottom:24px;color:#d2dedb;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:#090e12e8;border:1px solid #3b4c4a;border-radius:5px;padding:9px 12px}
-.crt{position:absolute;left:33.56%;top:50.6%;width:29.87%;height:30.1%;border-radius:7% / 8%;overflow:hidden;display:flex;flex-direction:column;padding:clamp(12px,1.25cqw,22px);color:var(--mint);background:radial-gradient(ellipse at 42% 20%,#162c24,#091712 76%,#060f0d);box-shadow:inset 0 0 22px #030b08,0 0 9px #7ef2aa33;border:1px solid #2b4538;font-size:clamp(11px,1.02cqw,16px)}
+.crt{position:absolute;left:33.56%;top:50.6%;width:29.87%;height:30.1%;border-radius:7% / 8%;overflow:hidden;display:flex;flex-direction:column;padding:clamp(12px,1.25cqw,22px);color:var(--mint);background:radial-gradient(ellipse at 42% 20%,#162c24,#091712 76%,#060f0d);box-shadow:inset 0 0 22px #030b08,0 0 9px #7ef2aa33;border:1px solid #2b4538;font-size:clamp(10px,.92cqw,15px)}
 .crt::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;background:repeating-linear-gradient(transparent 0 3px,#0002 3px 4px)}
 .bar{display:flex;justify-content:space-between;align-items:center;gap:6px;border-bottom:1px solid var(--edge);padding-bottom:.6em;font-size:.75em;letter-spacing:.12em;white-space:nowrap}
 .online{color:var(--dim);display:flex;align-items:center;gap:.55em}
-.online::before{content:"";width:.55em;height:.55em;background:#95ffb9;border-radius:50%;box-shadow:0 0 8px #81f9a9aa}
+.online[data-ready]::before{content:"";width:.55em;height:.55em;background:#95ffb9;border-radius:50%;box-shadow:0 0 8px #81f9a9aa}
 .chat{flex:1;min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#426354 transparent;margin:0 -.3em;padding:0 .3em}
-h1,h2{font-weight:700;margin:.48em 0 .22em;font-size:1.46em;line-height:1.15;letter-spacing:-.04em}
+h1,h2{font-weight:700;margin:.48em 0 .22em;font-size:1.23em;line-height:1.15;letter-spacing:-.04em}
 p{margin:0 0 .56em;color:#c2dcca;font-size:.92em;line-height:1.35}
+[hidden]{display:none!important}
 .options{display:grid;gap:.27em}
 button,a,input{font:inherit}
 button,.action{border:1px solid var(--edge);background:#182d23;color:var(--mint);border-radius:4px;text-decoration:none;cursor:pointer}
@@ -49,7 +50,7 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
 @media(max-aspect-ratio: 1/1){
 .stage{min-height:max(100svh,132vw)}
 .scene{width:290vw;max-width:none;margin-left:7vw;transform:translateY(-16vw)}
-.crt{font-size:clamp(10px,3.15vw,18px);padding:clamp(10px,3.5vw,20px)}
+.crt{font-size:clamp(10px,2.95vw,16px);padding:clamp(10px,3.5vw,20px)}
 .brand{top:20px}.caption{left:auto;right:20px;bottom:18px}
 }
 @media(min-aspect-ratio:1/1) and (max-height:650px){
@@ -58,73 +59,216 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
 .caption{bottom:10px;left:10px}
 .crt{padding:8px}
 }
+.intro{margin:.65em 0 .42em}
+.intro p{margin:0 0 .27em}
+.loader{margin:.65em 0}
+.loader p{margin-bottom:.36em}
+.loader-track{width:min(100%,17em);height:1em;border:1px solid #668c77;padding:2px;box-shadow:inset 1px 1px #05100a;background:#07150f}
+.loader-fill{height:100%;background:repeating-linear-gradient(90deg,#91eeb5 0 .7em,transparent .7em .9em);animation:progress var(--duration) steps(15,end) both}
+@keyframes progress{from{width:0}to{width:100%}}
+.contact{margin:.6em 0}
+.contact .action{display:inline-block}
+.share-dialog{height:auto;padding:14px}
+.share-dialog .dialog-bar{height:auto;padding:0;margin-bottom:.7em}
+.share-dialog input{display:block;width:100%;border:1px solid var(--edge);padding:.5em}
+@media(prefers-reduced-motion:reduce){.loader-fill{animation:none}}
 </style>
 </head>
 <body>
 <main class="stage">
-  <header class="brand"><span class="mark" aria-hidden="true">JC</span><div><strong>Jorge Cristo</strong><small>Terminal lunar</small></div></header>
+  <header class="brand"><span class="mark" aria-hidden="true">JC</span><div><strong>Jorge Cristo</strong><small data-copy="terminal">Terminal lunar</small></div></header>
   <div class="scene">
-    <img class="art" src="./assets/terminal-lunar.webp" alt="Monitor bege, teclado, mouse e caixas de som retrô sobre uma mesa na Lua, com a Terra ao fundo">
-    <section class="crt" aria-label="Terminal de currículos">
-      <div class="bar"><span>PORTFÓLIO / CV</span><span class="online">ONLINE</span></div>
-      <div class="chat" id="chat" aria-live="polite"></div>
-      <form id="prompt">
-        <label for="command" aria-label="Digite uma opção">❯</label>
-        <input type="text" id="command" placeholder="Digite 1, 2 ou 3" inputmode="numeric" maxlength="1" autocomplete="off">
-        <button type="submit">Enviar ↵</button>
+    <img class="art" src="./assets/terminal-lunar.webp" data-alt alt="Monitor bege, teclado, mouse e caixas de som retrô sobre uma mesa na Lua, com a Terra ao fundo">
+    <section class="crt" data-label="terminalLabel" aria-label="Terminal de currículos">
+      <div class="bar"><span data-copy="portfolio">PORTFÓLIO / CV</span><span class="online" id="status"></span></div>
+      <div class="chat" id="chat"></div>
+      <form id="prompt" hidden>
+        <label for="command" data-label="inputLabel" aria-label="Digite uma opção">❯</label>
+        <input type="text" id="command" placeholder="Digite 1, 2 ou 3" inputmode="numeric" enterkeyhint="send" maxlength="1" autocomplete="off">
+        <button type="submit" data-copy="send">Enviar ↵</button>
       </form>
     </section>
   </div>
-  <span class="caption">Lua · Estação CRT</span>
+  <span class="caption" data-copy="caption">Lua · Estação CRT</span>
 </main>
 
 <dialog id="preview" aria-labelledby="preview-title">
-  <div class="dialog-bar"><strong id="preview-title"></strong><button type="button" class="action" id="close">Fechar ×</button></div>
-  <iframe id="document-view" title="Visualização do currículo" sandbox></iframe>
+  <div class="dialog-bar"><strong id="preview-title"></strong><button type="button" class="action" id="close" data-copy="close">Fechar ×</button></div>
+  <iframe id="document-view" data-title="previewTitle" title="Visualização do currículo" sandbox></iframe>
+</dialog>
+
+<dialog class="share-dialog" id="share-dialog" aria-labelledby="share-title">
+  <div class="dialog-bar"><strong id="share-title" data-copy="share">Compartilhar link</strong><button type="button" class="action" id="close-share" data-copy="close">Fechar ×</button></div>
+  <p data-copy="manualShare">Copie o link selecionado para compartilhar.</p>
+  <input id="share-url" data-label="share" aria-label="Compartilhar link" type="url" readonly>
 </dialog>
 
 <template id="menu">
-  <h1>Olá, eu sou o Jorge.</h1>
-  <p>Qual currículo você quer ver?</p>
-  <div class="options">
-    <button class="option" type="button" data-choice="1"><kbd>01</kbd><span>Desenvolvimento freelance</span><span aria-hidden="true">›</span></button>
-    <button class="option" type="button" data-choice="2"><kbd>02</kbd><span>Desenvolvimento para empresas</span><span aria-hidden="true">›</span></button>
-    <button class="option" type="button" data-choice="3"><kbd>03</kbd><span>Tradução</span><span aria-hidden="true">›</span></button>
+  <div class="intro">
+    <h1></h1>
+    <p></p>
+    <p></p>
   </div>
+  <div class="options" hidden>
+    <button class="option" type="button" data-choice="1"><kbd>01</kbd><span></span><span aria-hidden="true">›</span></button>
+    <button class="option" type="button" data-choice="2"><kbd>02</kbd><span></span><span aria-hidden="true">›</span></button>
+    <button class="option" type="button" data-choice="3"><kbd>03</kbd><span></span><span aria-hidden="true">›</span></button>
+  </div>
+  <div class="contact" hidden><p></p><a class="action" data-copy="email" hidden>Enviar e-mail</a></div>
+  <p class="reply" role="status" hidden></p>
 </template>
 <template id="result">
   <h2></h2>
-  <div class="lang" role="group" aria-label="Idioma do currículo">
-    <span>Idioma</span><button type="button" data-lang="PT">PT</button><button type="button" data-lang="EN">EN</button>
+  <div class="lang" role="group" data-label="languageLabel" aria-label="Idioma do currículo">
+    <span data-copy="language">Idioma</span><button type="button" data-lang="PT">PT</button><button type="button" data-lang="EN">EN</button>
   </div>
   <div class="actions">
-    <button type="button" class="action" id="open">Visualizar ↗</button>
-    <a class="action" id="download">Baixar ↓</a>
-    <button type="button" class="action" id="back">Voltar</button>
+    <button type="button" class="action" id="open" data-copy="open">Visualizar ↗</button>
+    <a class="action" id="download" data-copy="download">Baixar ↓</a>
+    <button type="button" class="action" id="share" data-copy="share">Compartilhar link</button>
+    <button type="button" class="action" id="back" data-copy="back">Voltar</button>
   </div>
-  <p class="reply">Valeu pela visita! Foi bom falar com você.</p>
+  <p class="reply" role="status" hidden></p>
 </template>
 <script>
-const choices = {
-  '1': ['Dev_Freelance', 'Desenvolvimento freelance'],
-  '2': ['Dev_Empresas', 'Desenvolvimento para empresas'],
-  '3': ['Tradutor', 'Tradução']
+const pt = {
+  terminal: 'Terminal lunar', terminalLabel: 'Terminal de currículos', portfolio: 'PORTFÓLIO / CV',
+  caption: 'Lua · Estação CRT', send: 'Enviar ↵', inputLabel: 'Digite uma opção',
+  placeholder: 'Digite 1, 2 ou 3', close: 'Fechar ×', previewTitle: 'Visualização do currículo',
+  language: 'Idioma', languageLabel: 'Idioma do currículo', open: 'Visualizar ↗', download: 'Baixar ↓',
+  share: 'Compartilhar link', back: 'Voltar', email: 'Enviar e-mail',
+  connect: 'Conectando ao servidor lunar…', connected: 'Conexão estabelecida.', loading: 'Carregando currículos…',
+  intro: ['Olá, Jorge aqui.', 'Procurando meu currículo?', 'Tenho três opções. Escolha a que mais te interessa.'],
+  choices: ['Desenvolvimento freelance', 'Desenvolvimento para empresas', 'Tradução'],
+  thanks: 'Obrigado pela visita!', contact: 'Quer entrar em contato? É só clicar abaixo para me enviar um e-mail.',
+  invalid: 'Escolha 1, 2 ou 3.', copied: 'Link copiado.',
+  manualShare: 'Copie o link selecionado para compartilhar.',
+  alt: 'Monitor bege, teclado, mouse e caixas de som retrô sobre uma mesa na Lua, com a Terra ao fundo'
 };
+const en = {
+  terminal: 'Lunar terminal', terminalLabel: 'Résumé terminal', portfolio: 'PORTFOLIO / CV',
+  caption: 'Moon · CRT station', send: 'Send ↵', inputLabel: 'Enter an option',
+  placeholder: 'Type 1, 2, or 3', close: 'Close ×', previewTitle: 'Résumé preview',
+  language: 'Language', languageLabel: 'Résumé language', open: 'View ↗', download: 'Download ↓',
+  share: 'Share link', back: 'Back', email: 'Send email',
+  connect: 'Connecting to the lunar server…', connected: 'Connection established.', loading: 'Loading résumés…',
+  intro: ['Hi, Jorge here.', 'Looking for my résumé?', 'I have three options. Pick the one that suits you best.'],
+  choices: ['Freelance development', 'Development for companies', 'Translation'],
+  thanks: 'Thanks for stopping by!', contact: 'Want to get in touch? Click below to send me an email.',
+  invalid: 'Choose 1, 2, or 3.', copied: 'Link copied.',
+  manualShare: 'Copy the selected link to share it.',
+  alt: 'Beige monitor, keyboard, mouse and retro speakers on a desk on the Moon, with Earth in the background'
+};
+const languages = navigator.languages?.length ? navigator.languages : [navigator.language || ''];
+const preferred = languages.map(language => language.toLowerCase().split('-')[0])
+  .find(language => language === 'pt' || language === 'en');
+const isPortuguese = preferred === 'pt';
+const copy = isPortuguese ? pt : en;
+const categories = ['Dev_Freelance', 'Dev_Empresas', 'Tradutor'];
+const emails = ['dev.jorge.c@gmail.com', 'dev.jorge.c@gmail.com', 'cristtranslations@gmail.com'];
 const chat = document.querySelector('#chat');
 const form = document.querySelector('#prompt');
 const command = document.querySelector('#command');
+const status = document.querySelector('#status');
 const dialog = document.querySelector('#preview');
 const frame = document.querySelector('#document-view');
+const shareDialog = document.querySelector('#share-dialog');
+const shareUrl = document.querySelector('#share-url');
+const motion = matchMedia('(prefers-reduced-motion: reduce)');
 let selection;
 let documentPath;
+let opening;
+let sharing = false;
+let shareSession = new AbortController();
+
+document.documentElement.lang = isPortuguese ? 'pt-BR' : 'en';
+document.title = copy.terminal + ' — Jorge Cristo';
+document.querySelector('[data-alt]').alt = copy.alt;
+command.placeholder = copy.placeholder;
+
+function translate(container) {
+  container.querySelectorAll('[data-copy]').forEach(el => el.textContent = copy[el.dataset.copy]);
+  container.querySelectorAll('[data-label]').forEach(el => el.setAttribute('aria-label', copy[el.dataset.label]));
+  container.querySelectorAll('[data-title]').forEach(el => el.title = copy[el.dataset.title]);
+}
+translate(document);
+
+function wait(ms) {
+  return motion.matches ? Promise.resolve() : new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function typeLine(line, value) {
+  line.textContent = '';
+  line.hidden = false;
+  if (!motion.matches) {
+    line.setAttribute('aria-busy', 'true');
+    for (const char of value) {
+      if (!line.isConnected) return;
+      line.textContent += char;
+      await wait(14);
+    }
+    line.removeAttribute('aria-busy');
+  } else {
+    line.textContent = value;
+  }
+}
 
 function show(template) {
   chat.replaceChildren(document.querySelector('#' + template).content.cloneNode(true));
+  translate(chat);
   chat.scrollTop = 0;
 }
 
+async function loader(message, duration, before = null) {
+  const block = document.createElement('div');
+  block.className = 'loader';
+  const label = document.createElement('p');
+  label.textContent = message;
+  const track = document.createElement('div');
+  track.className = 'loader-track';
+  track.setAttribute('aria-hidden', 'true');
+  const fill = document.createElement('div');
+  fill.className = 'loader-fill';
+  fill.style.setProperty('--duration', duration + 'ms');
+  track.append(fill);
+  block.append(label, track);
+  chat.insertBefore(block, before);
+  await wait(duration);
+  block.remove();
+}
+
+function populateMenu() {
+  chat.querySelectorAll('[data-choice]').forEach((button, index) => {
+    button.querySelector('span').textContent = copy.choices[index];
+  });
+  return chat.querySelectorAll('.intro h1, .intro p');
+}
+
+function focusPrompt() {
+  command.focus({preventScroll: true});
+}
+
+async function boot() {
+  status.textContent = isPortuguese ? 'CONECTANDO' : 'CONNECTING';
+  await loader(copy.connect, 775);
+  status.textContent = 'ONLINE';
+  status.setAttribute('data-ready', '');
+  status.title = copy.connected;
+  show('menu');
+  const lines = populateMenu();
+  for (const [index, line] of Array.from(lines).entries()) {
+    await typeLine(line, copy.intro[index]);
+    await wait(115);
+  }
+  const options = chat.querySelector('.options');
+  await loader(copy.loading, 410, options);
+  options.hidden = false;
+  form.hidden = false;
+  focusPrompt();
+}
+
 function setLanguage(language) {
-  const name = 'Jorge_Cristo_' + selection[0] + '_' + language + '.html';
+  const name = 'Jorge_Cristo_' + categories[selection] + '_' + language + '.html';
   documentPath = './curriculos/' + name;
   const download = document.querySelector('#download');
   download.href = documentPath;
@@ -134,38 +278,99 @@ function setLanguage(language) {
   });
 }
 
+function replyOnce(message, line = chat.querySelector('.reply')) {
+  if (line && line.isConnected && line.hidden) void typeLine(line, message);
+}
+
 function choose(number) {
-  if (!Object.hasOwn(choices, number)) {
-    show('menu');
-    selection = undefined;
-    const message = document.createElement('p');
-    message.className = 'reply';
-    message.textContent = 'Escolha 1, 2 ou 3.';
-    chat.append(message);
-    message.scrollIntoView({block: 'nearest'});
+  if (!/^[123]$/.test(number)) {
+    const line = chat.querySelector('.reply');
+    if (line && (line.hidden || Object.hasOwn(line.dataset, 'error'))) {
+      line.dataset.error = '';
+      line.hidden = false;
+      line.textContent = copy.invalid;
+    }
     return;
   }
-  selection = choices[number];
+  selection = Number(number) - 1;
   show('result');
-  chat.querySelector('h2').textContent = selection[1];
-  setLanguage('PT');
-  chat.querySelector('#open').focus({preventScroll:true});
+  chat.querySelector('h2').textContent = copy.choices[selection];
+  setLanguage(isPortuguese ? 'PT' : 'EN');
+}
+
+function thank(message = copy.thanks, line = chat.querySelector('.reply')) {
+  if (!line?.isConnected) return;
+  if (Object.hasOwn(line.dataset, 'error')) {
+    delete line.dataset.error;
+    line.hidden = true;
+  }
+  replyOnce(message, line);
+}
+
+async function backToMenu() {
+  const previous = selection;
+  selection = undefined;
+  show('menu');
+  populateMenu().forEach((line, index) => line.textContent = copy.intro[index]);
+  chat.querySelector('.options').hidden = false;
+  const contact = chat.querySelector('.contact');
+  const link = contact.querySelector('a');
+  link.href = 'mailto:' + emails[previous];
+  contact.hidden = false;
+  focusPrompt();
+  await typeLine(contact.querySelector('p'), copy.contact);
+  if (!contact.isConnected) return;
+  link.hidden = false;
+  chat.scrollTop = chat.scrollHeight;
+}
+
+async function share() {
+  if (sharing) return;
+  sharing = true;
+  const line = chat.querySelector('.reply');
+  const url = new URL(documentPath, document.baseURI).href;
+  try {
+    if (navigator.share) {
+      try {
+        await navigator.share({title: copy.choices[selection] + ' — Jorge Cristo', url});
+        thank(copy.thanks, line);
+        return;
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      thank(copy.copied + ' ' + copy.thanks, line);
+    } catch {
+      if (!line.isConnected) return;
+      shareUrl.value = url;
+      shareDialog.showModal();
+      shareUrl.select();
+      shareUrl.addEventListener('copy', () => thank(copy.thanks, line), {
+        once: true, signal: shareSession.signal
+      });
+    }
+  } finally {
+    sharing = false;
+  }
 }
 
 chat.addEventListener('click', event => {
-  const button = event.target.closest('button');
-  if (!button) return;
-  if (button.dataset.choice) choose(button.dataset.choice);
-  if (button.dataset.lang) setLanguage(button.dataset.lang);
-  if (button.id === 'back') {
-    const previous = Object.keys(choices).find(key => choices[key] === selection);
-    selection = undefined;
-    show('menu');
-    chat.querySelector('[data-choice="' + previous + '"]').focus({preventScroll:true});
+  const control = event.target.closest('button, a');
+  if (!control) return;
+  if (control.dataset.choice) {
+    choose(control.dataset.choice);
+    chat.querySelector('#open').focus({preventScroll: true});
   }
-  if (button.id === 'open') {
-    document.querySelector('#preview-title').textContent = selection[1];
+  if (control.dataset.lang) setLanguage(control.dataset.lang);
+  if (control.id === 'back') void backToMenu();
+  if (control.id === 'share') void share();
+  if (control.id === 'download') thank();
+  if (control.id === 'open') {
+    document.querySelector('#preview-title').textContent = copy.choices[selection];
     frame.src = documentPath;
+    opening = chat.querySelector('.reply');
     dialog.showModal();
   }
 });
@@ -176,8 +381,17 @@ form.addEventListener('submit', event => {
   command.value = '';
 });
 document.querySelector('#close').addEventListener('click', () => dialog.close());
-dialog.addEventListener('close', () => frame.removeAttribute('src'));
-show('menu');
+dialog.addEventListener('close', () => {
+  frame.removeAttribute('src');
+  thank(copy.thanks, opening);
+  opening = undefined;
+});
+document.querySelector('#close-share').addEventListener('click', () => shareDialog.close());
+shareDialog.addEventListener('close', () => {
+  shareSession.abort();
+  shareSession = new AbortController();
+});
+void boot();
 </script>
 </body>
 </html>
