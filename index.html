@@ -32,8 +32,10 @@ button,.action{border:1px solid var(--edge);background:#182d23;color:var(--mint)
 .option kbd{font:inherit;color:#a1ecc2;font-size:.88em;letter-spacing:.04em}
 .option:hover,.action:hover,form button:hover{background:#254c38;border-color:#7fdca6}
 :focus-visible{outline:2px solid #d8ffe6;outline-offset:-2px}
-form{display:flex;align-items:center;gap:.55em;margin-top:.52em;padding-top:.46em;border-top:1px solid var(--edge);font-size:.83em}
+form{display:flex;align-items:center;gap:.55em;margin-top:.25em;padding-top:.36em;border-top:1px solid var(--edge);font-size:.83em}
 form label{font-weight:bold}
+.command-hint{margin:.26em 0 0;color:var(--dim);font-size:.69em;line-height:1.2}
+.command-help{white-space:pre-line}
 input{min-width:0;flex:1;background:transparent;border:0;color:var(--mint);padding:.35em .25em}
 input::placeholder{color:var(--dim)}
 form button{padding:.25em .55em}
@@ -82,9 +84,10 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
     <section class="crt" data-label="terminalLabel" aria-label="Terminal de currículos">
       <div class="bar"><span data-copy="portfolio">PORTFÓLIO / CV</span><span class="online" id="status"></span></div>
       <div class="chat" id="chat"></div>
+      <p id="command-hint" class="command-hint" data-copy="hint" hidden></p>
       <form id="prompt" hidden>
         <label for="command" data-label="inputLabel" aria-label="Digite uma opção">❯</label>
-        <input type="text" id="command" placeholder="Digite 1, 2 ou 3" inputmode="numeric" enterkeyhint="send" maxlength="1" autocomplete="off">
+        <input type="text" id="command" placeholder="Digite 1, 2 ou 3" inputmode="text" enterkeyhint="send" maxlength="12" aria-describedby="command-hint" autocapitalize="off" spellcheck="false" autocomplete="off">
         <button type="submit" data-copy="send">Enviar ↵</button>
       </form>
     </section>
@@ -123,9 +126,9 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
     <span data-copy="language">Idioma</span><button type="button" data-lang="PT">PT</button><button type="button" data-lang="EN">EN</button>
   </div>
   <div class="actions">
-    <button type="button" class="action" id="open" data-copy="open">Visualizar ↗</button>
-    <a class="action" id="download" data-copy="download">Baixar ↓</a>
-    <button type="button" class="action" id="share" data-copy="share">Compartilhar link</button>
+    <button type="button" class="action" id="open" data-copy="actionOpen">Visualizar ↗</button>
+    <a class="action" id="download" data-copy="actionDownload">Baixar ↓</a>
+    <button type="button" class="action" id="share" data-copy="actionShare">Compartilhar link</button>
     <button type="button" class="action" id="back" data-copy="back">Voltar</button>
   </div>
   <p class="reply" role="status" hidden></p>
@@ -134,28 +137,40 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
 const pt = {
   terminal: 'Terminal lunar', terminalLabel: 'Terminal de currículos', portfolio: 'PORTFÓLIO / CV',
   caption: 'Lua · Estação CRT', send: 'Enviar ↵', inputLabel: 'Digite uma opção',
-  placeholder: 'Digite 1, 2 ou 3', close: 'Fechar ×', previewTitle: 'Visualização do currículo',
-  language: 'Idioma', languageLabel: 'Idioma do currículo', open: 'Visualizar ↗', download: 'Baixar ↓',
+  close: 'Fechar ×', previewTitle: 'Visualização do currículo',
+  language: 'Idioma', languageLabel: 'Idioma do currículo',
   share: 'Compartilhar link', back: 'Voltar', email: 'Enviar e-mail',
   connect: 'Conectando ao servidor lunar…', connected: 'Conexão estabelecida.', loading: 'Carregando currículos…',
   intro: ['Olá, Jorge aqui.', 'Procurando meu currículo?', 'Tenho três opções. Escolha a que mais te interessa.'],
   choices: ['Desenvolvimento freelance', 'Desenvolvimento para empresas', 'Tradução'],
   thanks: 'Obrigado pela visita!', contact: 'Quer entrar em contato? É só clicar abaixo para me enviar um e-mail.',
-  invalid: 'Escolha 1, 2 ou 3.', copied: 'Link copiado.',
+  hint: 'Digite help para ver os comandos',
+  actionOpen: '1 Visualizar', actionDownload: '2 Baixar', actionShare: '3 Compartilhar',
+  menuPrompt: 'Digite 1, 2, 3 ou help', actionPrompt: 'Digite um comando',
+  menuHelp: '1, 2, 3 — escolher currículo',
+  actionHelp: '1 — visualizar\n2 — baixar\n3 — compartilhar\nEsc — voltar · Tab — trocar de currículo',
+  opening: 'Abrindo currículo…', returning: 'Carregando menu…',
+  invalid: 'Comando inválido. Digite help.', copied: 'Link copiado.',
   manualShare: 'Copie o link selecionado para compartilhar.',
   alt: 'Monitor bege, teclado, mouse e caixas de som retrô sobre uma mesa na Lua, com a Terra ao fundo'
 };
 const en = {
   terminal: 'Lunar terminal', terminalLabel: 'Résumé terminal', portfolio: 'PORTFOLIO / CV',
   caption: 'Moon · CRT station', send: 'Send ↵', inputLabel: 'Enter an option',
-  placeholder: 'Type 1, 2, or 3', close: 'Close ×', previewTitle: 'Résumé preview',
-  language: 'Language', languageLabel: 'Résumé language', open: 'View ↗', download: 'Download ↓',
+  close: 'Close ×', previewTitle: 'Résumé preview',
+  language: 'Language', languageLabel: 'Résumé language',
   share: 'Share link', back: 'Back', email: 'Send email',
   connect: 'Connecting to the lunar server…', connected: 'Connection established.', loading: 'Loading résumés…',
   intro: ['Hi, Jorge here.', 'Looking for my résumé?', 'I have three options. Pick the one that suits you best.'],
   choices: ['Freelance development', 'Development for companies', 'Translation'],
   thanks: 'Thanks for stopping by!', contact: 'Want to get in touch? Click below to send me an email.',
-  invalid: 'Choose 1, 2, or 3.', copied: 'Link copied.',
+  hint: 'Type help to see commands',
+  actionOpen: '1 View', actionDownload: '2 Download', actionShare: '3 Share',
+  menuPrompt: 'Type 1, 2, 3, or help', actionPrompt: 'Type a command',
+  menuHelp: '1, 2, 3 — choose a résumé',
+  actionHelp: '1 — view\n2 — download\n3 — share\nEsc — back · Tab — switch résumé',
+  opening: 'Opening résumé…', returning: 'Loading menu…',
+  invalid: 'Unknown command. Type help.', copied: 'Link copied.',
   manualShare: 'Copy the selected link to share it.',
   alt: 'Beige monitor, keyboard, mouse and retro speakers on a desk on the Moon, with Earth in the background'
 };
@@ -169,6 +184,7 @@ const emails = ['dev.jorge.c@gmail.com', 'dev.jorge.c@gmail.com', 'cristtranslat
 const chat = document.querySelector('#chat');
 const form = document.querySelector('#prompt');
 const command = document.querySelector('#command');
+const hint = document.querySelector('#command-hint');
 const status = document.querySelector('#status');
 const dialog = document.querySelector('#preview');
 const frame = document.querySelector('#document-view');
@@ -179,12 +195,13 @@ let selection;
 let documentPath;
 let opening;
 let sharing = false;
+let transitioning = false;
 let shareSession = new AbortController();
 
 document.documentElement.lang = isPortuguese ? 'pt-BR' : 'en';
 document.title = copy.terminal + ' — Jorge Cristo';
 document.querySelector('[data-alt]').alt = copy.alt;
-command.placeholder = copy.placeholder;
+command.placeholder = copy.menuPrompt;
 
 function translate(container) {
   container.querySelectorAll('[data-copy]').forEach(el => el.textContent = copy[el.dataset.copy]);
@@ -205,7 +222,7 @@ async function typeLine(line, value) {
     for (const char of value) {
       if (!line.isConnected) return;
       line.textContent += char;
-      await wait(14);
+      await wait(28);
     }
     line.removeAttribute('aria-busy');
   } else {
@@ -250,7 +267,7 @@ function focusPrompt() {
 
 async function boot() {
   status.textContent = isPortuguese ? 'CONECTANDO' : 'CONNECTING';
-  await loader(copy.connect, 775);
+  await loader(copy.connect, 1300);
   status.textContent = 'ONLINE';
   status.setAttribute('data-ready', '');
   status.title = copy.connected;
@@ -258,12 +275,13 @@ async function boot() {
   const lines = populateMenu();
   for (const [index, line] of Array.from(lines).entries()) {
     await typeLine(line, copy.intro[index]);
-    await wait(115);
+    await wait(230);
   }
   const options = chat.querySelector('.options');
-  await loader(copy.loading, 410, options);
+  await loader(copy.loading, 2000, options);
   options.hidden = false;
   form.hidden = false;
+  hint.hidden = false;
   focusPrompt();
 }
 
@@ -282,42 +300,67 @@ function replyOnce(message, line = chat.querySelector('.reply')) {
   if (line && line.isConnected && line.hidden) void typeLine(line, message);
 }
 
-function choose(number) {
-  if (!/^[123]$/.test(number)) {
-    const line = chat.querySelector('.reply');
-    if (line && (line.hidden || Object.hasOwn(line.dataset, 'error'))) {
-      line.dataset.error = '';
-      line.hidden = false;
-      line.textContent = copy.invalid;
-    }
-    return;
-  }
+async function transition(message) {
+  transitioning = true;
+  command.value = '';
+  command.readOnly = true;
+  chat.replaceChildren();
+  await loader(message, 1000);
+  command.readOnly = false;
+  transitioning = false;
+}
+
+async function choose(number) {
+  await transition(copy.opening);
   selection = Number(number) - 1;
+  command.placeholder = copy.actionPrompt;
   show('result');
   chat.querySelector('h2').textContent = copy.choices[selection];
   setLanguage(isPortuguese ? 'PT' : 'EN');
+  focusPrompt();
+}
+
+function runCommand(value) {
+  if (transitioning || form.hidden) return;
+  command.value = '';
+  if (/^[123]$/.test(value)) {
+    if (selection === undefined) {
+      void choose(value);
+    } else {
+      chat.querySelector(['#open', '#download', '#share'][Number(value) - 1]).click();
+    }
+    return;
+  }
+  const message = value === 'help' ? (selection === undefined ? copy.menuHelp : copy.actionHelp) : copy.invalid;
+  let help = chat.querySelector('.command-help');
+  if (!help) {
+    help = document.createElement('p');
+    help.className = 'reply command-help';
+    help.setAttribute('role', 'status');
+    chat.append(help);
+  }
+  help.textContent = message;
+  chat.scrollTop = chat.scrollHeight;
 }
 
 function thank(message = copy.thanks, line = chat.querySelector('.reply')) {
-  if (!line?.isConnected) return;
-  if (Object.hasOwn(line.dataset, 'error')) {
-    delete line.dataset.error;
-    line.hidden = true;
-  }
   replyOnce(message, line);
 }
 
-async function backToMenu() {
+async function backToMenu(offerContact = true) {
   const previous = selection;
+  await transition(copy.returning);
   selection = undefined;
+  command.placeholder = copy.menuPrompt;
   show('menu');
   populateMenu().forEach((line, index) => line.textContent = copy.intro[index]);
   chat.querySelector('.options').hidden = false;
+  focusPrompt();
+  if (!offerContact) return;
   const contact = chat.querySelector('.contact');
   const link = contact.querySelector('a');
   link.href = 'mailto:' + emails[previous];
   contact.hidden = false;
-  focusPrompt();
   await typeLine(contact.querySelector('p'), copy.contact);
   if (!contact.isConnected) return;
   link.hidden = false;
@@ -358,13 +401,13 @@ async function share() {
 
 chat.addEventListener('click', event => {
   const control = event.target.closest('button, a');
-  if (!control) return;
+  if (!control || transitioning) return;
   if (control.dataset.choice) {
-    choose(control.dataset.choice);
-    chat.querySelector('#open').focus({preventScroll: true});
+    runCommand(control.dataset.choice);
   }
   if (control.dataset.lang) setLanguage(control.dataset.lang);
   if (control.id === 'back') void backToMenu();
+  if (['open', 'download', 'share'].includes(control.id)) chat.querySelector('.command-help')?.remove();
   if (control.id === 'share') void share();
   if (control.id === 'download') thank();
   if (control.id === 'open') {
@@ -377,8 +420,25 @@ chat.addEventListener('click', event => {
 
 form.addEventListener('submit', event => {
   event.preventDefault();
-  choose(command.value.trim());
-  command.value = '';
+  runCommand(command.value.trim().toLowerCase());
+});
+document.addEventListener('keydown', event => {
+  if (transitioning || selection === undefined || dialog.open || shareDialog.open ||
+      event.ctrlKey || event.altKey || event.metaKey || event.isComposing) return;
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    void backToMenu();
+  } else if (event.key === 'Tab' && !event.shiftKey && event.target === command) {
+    event.preventDefault();
+    void backToMenu(false);
+  }
+});
+
+command.addEventListener('keydown', event => {
+  if (event.repeat || event.isComposing || event.ctrlKey || event.altKey || event.metaKey ||
+      command.value || !/^[123]$/.test(event.key)) return;
+  event.preventDefault();
+  runCommand(event.key);
 });
 document.querySelector('#close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('close', () => {
