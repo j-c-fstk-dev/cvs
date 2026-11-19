@@ -9,9 +9,10 @@
 :root{color-scheme:dark;--mint:#a7f9c9;--dim:#91b6a1;--edge:#355449}
 body{margin:0;background:#06090b;color:#e5eeeb;font:14px ui-monospace,"SFMono-Regular",Consolas,monospace}
 .stage{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;position:relative;overflow:hidden}
+.scene-pending .stage{visibility:hidden}
 .scene{position:relative;width:min(100vw,150svh);aspect-ratio:3/2;container-type:inline-size;flex:none}
 .art{display:block;width:100%;height:100%;object-fit:fill}
-.earth{position:absolute;left:25.55%;top:8.24%;width:46.95%;height:auto;pointer-events:none;opacity:0;transition:opacity 1.6s ease;
+.earth{position:absolute;left:25.55%;top:8.24%;width:46.95%;height:auto;pointer-events:none;opacity:0;
 clip-path:polygon(0 0,100% 0,100% 100%,88.5% 100%,88.3% 57%,87.9% 55.8%,86.9% 54.85%,84.7% 54.45%,70% 54%,50% 53.95%,30% 54.1%,13.7% 54.55%,11.6% 54.9%,10.65% 56%,10.35% 57.1%,10.1% 100%,0 100%)}
 .earth[data-active]{opacity:1}
 @media(prefers-reduced-motion:reduce){.earth{display:none}}
@@ -79,6 +80,7 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
 .share-dialog input{display:block;width:100%;border:1px solid var(--edge);padding:.5em}
 @media(prefers-reduced-motion:reduce){.loader-fill{animation:none}}
 </style>
+<script>document.documentElement.classList.add('scene-pending');</script>
 </head>
 <body>
 <main class="stage">
@@ -478,7 +480,34 @@ shareDialog.addEventListener('close', () => {
   shareSession.abort();
   shareSession = new AbortController();
 });
-void boot();
+async function revealScene() {
+  const root = document.documentElement;
+  const art = document.querySelector('.art');
+  const earth = document.querySelector('#earth');
+  const startup = new AbortController();
+  let timeout;
+  const globeReady = motion.matches ? Promise.resolve() : new Promise(resolve => {
+    earth.addEventListener('earth-ready', resolve, {once: true, signal: startup.signal});
+    motion.addEventListener('change', event => {
+      if (event.matches) resolve();
+    }, {signal: startup.signal});
+  });
+  await Promise.race([
+    Promise.all([art.decode().catch(() => {}), globeReady]),
+    new Promise(resolve => {
+      timeout = setTimeout(() => {
+        if (!motion.matches && !earth.hasAttribute('data-active')) earth.dataset.static = '';
+        resolve();
+      }, 2500);
+    })
+  ]);
+  clearTimeout(timeout);
+  startup.abort();
+  root.classList.remove('scene-pending');
+  void boot();
+}
+
+void revealScene();
 </script>
 <script type="module" src="./assets/earth.js"></script>
 </body>

@@ -74,13 +74,16 @@ function tick(now) {
     if (previous !== undefined) elapsed = (elapsed + now - previous) % rotationMs;
     previous = now;
     render(elapsed / rotationMs);
-    canvas.dataset.active = '';
+    if (!canvas.hasAttribute('data-active')) {
+      canvas.dataset.active = '';
+      canvas.dispatchEvent(new Event('earth-ready'));
+    }
   }
   animation = requestAnimationFrame(tick);
 }
 
 async function syncMotion() {
-  const shouldRun = !reducedMotion.matches && !document.hidden;
+  const shouldRun = !reducedMotion.matches && !document.hidden && !canvas.hasAttribute('data-static');
   if (!shouldRun) {
     running = false;
     cancelAnimationFrame(animation);
@@ -91,7 +94,11 @@ async function syncMotion() {
   if (running) return;
   initialization ??= prepare().catch(() => {});
   await initialization;
-  if (!render || running || reducedMotion.matches || document.hidden) return;
+  if (!render) {
+    canvas.dispatchEvent(new Event('earth-ready'));
+    return;
+  }
+  if (running || reducedMotion.matches || document.hidden || canvas.hasAttribute('data-static')) return;
   running = true;
   animation = requestAnimationFrame(tick);
 }
