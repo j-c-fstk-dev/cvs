@@ -11,6 +11,10 @@ body{margin:0;background:#06090b;color:#e5eeeb;font:14px ui-monospace,"SFMono-Re
 .stage{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;position:relative;overflow:hidden}
 .scene{position:relative;width:min(100vw,150svh);aspect-ratio:3/2;container-type:inline-size;flex:none}
 .art{display:block;width:100%;height:100%;object-fit:fill}
+.earth{position:absolute;left:25.55%;top:8.24%;width:46.95%;height:auto;pointer-events:none;opacity:0;transition:opacity 1.6s ease;
+clip-path:polygon(0 0,100% 0,100% 100%,88.5% 100%,88.3% 57%,87.9% 55.8%,86.9% 54.85%,84.7% 54.45%,70% 54%,50% 53.95%,30% 54.1%,13.7% 54.55%,11.6% 54.9%,10.65% 56%,10.35% 57.1%,10.1% 100%,0 100%)}
+.earth[data-active]{opacity:1}
+@media(prefers-reduced-motion:reduce){.earth{display:none}}
 .brand{position:absolute;z-index:2;top:clamp(22px,5vh,48px);left:clamp(22px,4vw,64px);display:flex;align-items:center;gap:13px}
 .mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #48665f;border-radius:9px;color:var(--mint);font-weight:bold;background:#101a1bdd}
 .brand strong{display:block;font:600 16px system-ui,sans-serif;letter-spacing:.025em}
@@ -81,6 +85,7 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
   <header class="brand"><span class="mark" aria-hidden="true">JC</span><div><strong>Jorge Cristo</strong><small data-copy="terminal">Terminal lunar</small></div></header>
   <div class="scene">
     <img class="art" src="./assets/terminal-lunar.webp" data-alt alt="Monitor bege, teclado, mouse e caixas de som retrô sobre uma mesa na Lua, com a Terra ao fundo">
+    <canvas class="earth" id="earth" width="384" height="384" aria-hidden="true"></canvas>
     <section class="crt" data-label="terminalLabel" aria-label="Terminal de currículos">
       <div class="bar"><span data-copy="portfolio">PORTFÓLIO / CV</span><span class="online" id="status"></span></div>
       <div class="chat" id="chat"></div>
@@ -475,5 +480,6 @@ shareDialog.addEventListener('close', () => {
 });
 void boot();
 </script>
+<script type="module" src="./assets/earth.js"></script>
 </body>
 </html>
