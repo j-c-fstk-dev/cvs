@@ -68,6 +68,9 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
 }
 .intro{margin:.65em 0 .42em}
 .intro p{margin:0 0 .27em}
+.chat[data-connecting]{display:grid;place-items:center;text-align:center}
+.chat[data-connecting] .loader{width:100%}
+.chat[data-connecting] .loader-track{margin-inline:auto}
 .loader{margin:.65em 0}
 .loader p{margin-bottom:.36em}
 .loader-track{width:min(100%,17em);height:1em;border:1px solid #668c77;padding:2px;box-shadow:inset 1px 1px #05100a;background:#07150f}
@@ -280,7 +283,9 @@ function focusPrompt() {
 
 async function boot() {
   status.textContent = isPortuguese ? 'CONECTANDO' : 'CONNECTING';
-  await loader(copy.connect, 1300);
+  chat.dataset.connecting = '';
+  await loader(copy.connect, 3000);
+  delete chat.dataset.connecting;
   status.textContent = 'ONLINE';
   status.setAttribute('data-ready', '');
   status.title = copy.connected;
