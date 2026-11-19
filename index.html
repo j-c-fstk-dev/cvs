@@ -7,20 +7,26 @@
 <style>
 *{box-sizing:border-box}
 :root{color-scheme:dark;--mint:#a7f9c9;--dim:#91b6a1;--edge:#355449}
-body{margin:0;background:#06090b;color:#e5eeeb;font:14px ui-monospace,"SFMono-Regular",Consolas,monospace}
-.stage{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;position:relative;overflow:hidden}
+body{--header-height:64px;--footer-height:44px;--scene-height:calc(100svh - var(--header-height) - var(--footer-height));margin:0;background:#06090b;color:#e5eeeb;font:14px ui-monospace,"SFMono-Regular",Consolas,monospace}
+.stage{min-height:var(--scene-height);display:grid;grid-template-columns:minmax(0,1fr);place-items:center;position:relative;overflow:hidden}
 .scene-pending .stage{visibility:hidden}
-.scene{position:relative;width:min(100vw,150svh);aspect-ratio:3/2;container-type:inline-size;flex:none}
+.scene{position:relative;width:min(100vw,calc(var(--scene-height) * 1.5));aspect-ratio:3/2;container-type:inline-size;flex:none}
 .art{display:block;width:100%;height:100%;object-fit:fill}
 .earth{position:absolute;left:25.55%;top:8.24%;width:46.95%;height:auto;pointer-events:none;opacity:0;
 clip-path:polygon(0 0,100% 0,100% 100%,88.5% 100%,88.3% 57%,87.9% 55.8%,86.9% 54.85%,84.7% 54.45%,70% 54%,50% 53.95%,30% 54.1%,13.7% 54.55%,11.6% 54.9%,10.65% 56%,10.35% 57.1%,10.1% 100%,0 100%)}
 .earth[data-active]{opacity:1}
 @media(prefers-reduced-motion:reduce){.earth{display:none}}
-.brand{position:absolute;z-index:2;top:clamp(22px,5vh,48px);left:clamp(22px,4vw,64px);display:flex;align-items:center;gap:13px}
+.site-header,.site-footer{padding-inline:clamp(12px,4vw,64px);background:#06090b}
+.site-header{min-height:var(--header-height);display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #253530}
+.site-footer{min-height:var(--footer-height);display:flex;align-items:center;border-top:1px solid #253530}
+.brand{display:flex;align-items:center;gap:10px}
+.site-nav{display:flex;align-items:center;gap:clamp(4px,1vw,14px)}
+.site-nav a{display:grid;place-items:center;min-height:44px;padding-inline:clamp(5px,1vw,12px);color:var(--mint);font-size:12px;text-decoration:none;white-space:nowrap}
+.site-nav a:hover{text-decoration:underline;text-underline-offset:4px}
 .mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #48665f;border-radius:9px;color:var(--mint);font-weight:bold;background:#101a1bdd}
 .brand strong{display:block;font:600 16px system-ui,sans-serif;letter-spacing:.025em}
 .brand small{display:block;color:#a4b7ba;margin-top:4px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
-.caption{position:absolute;left:clamp(22px,4vw,64px);bottom:24px;color:#d2dedb;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:#090e12e8;border:1px solid #3b4c4a;border-radius:5px;padding:9px 12px}
+.caption{color:#a4b7ba;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
 .crt{position:absolute;left:33.56%;top:50.6%;width:29.87%;height:30.1%;border-radius:7% / 8%;overflow:hidden;display:flex;flex-direction:column;padding:clamp(12px,1.25cqw,22px);color:var(--mint);background:radial-gradient(ellipse at 42% 20%,#162c24,#091712 76%,#060f0d);box-shadow:inset 0 0 22px #030b08,0 0 9px #7ef2aa33;border:1px solid #2b4538;font-size:clamp(10px,.92cqw,15px)}
 .crt::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;background:repeating-linear-gradient(transparent 0 3px,#0002 3px 4px)}
 .bar{display:flex;justify-content:space-between;align-items:center;gap:6px;border-bottom:1px solid var(--edge);padding-bottom:.6em;font-size:.75em;letter-spacing:.12em;white-space:nowrap}
@@ -55,15 +61,17 @@ dialog::backdrop{background:#030806dd}
 .dialog-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;height:48px}
 iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:block}
 @media(max-aspect-ratio: 1/1){
-.stage{min-height:max(100svh,132vw)}
+.stage{height:max(var(--scene-height),132vw);min-height:0;grid-template-rows:minmax(0,1fr)}
 .scene{width:260vw;max-width:none;margin-left:7vw;transform:translateY(-16vw)}
 .crt{font-size:clamp(10px,2.95vw,16px);padding:clamp(10px,3.5vw,20px)}
-.brand{top:20px}.caption{left:auto;right:20px;bottom:18px}
+.mark{width:34px;height:34px}
+.brand{gap:7px}
+.brand strong{font-size:14px}
+.brand small{letter-spacing:.08em}
 }
 @media(min-aspect-ratio:1/1) and (max-height:650px){
-.scene{width:min(100vw,175svh)}
-.brand{top:12px;left:12px}
-.caption{bottom:10px;left:10px}
+body{--header-height:52px;--footer-height:34px}
+.scene{width:min(100vw,155svh)}
 .crt{padding:8px}
 }
 .intro{margin:.65em 0 .42em}
@@ -86,8 +94,14 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
 <script>document.documentElement.classList.add('scene-pending');</script>
 </head>
 <body>
+<header class="site-header">
+  <div class="brand"><span class="mark" aria-hidden="true">JC</span><div><strong>Jorge Cristo</strong><small data-copy="terminal">Terminal lunar</small></div></div>
+  <nav class="site-nav" data-label="siteNav" aria-label="Links do Jorge">
+    <a id="portfolio-link" data-copy="portfolioLink" href="https://jcdevportfolio.netlify.app/pt">Portfólio</a>
+    <a href="https://github.com/j-c-fstk-dev">GitHub</a>
+  </nav>
+</header>
 <main class="stage">
-  <header class="brand"><span class="mark" aria-hidden="true">JC</span><div><strong>Jorge Cristo</strong><small data-copy="terminal">Terminal lunar</small></div></header>
   <div class="scene">
     <img class="art" src="./assets/terminal-lunar.webp" data-alt alt="Monitor bege, teclado, mouse e caixas de som retrô sobre uma mesa na Lua, com a Terra ao fundo">
     <canvas class="earth" id="earth" width="384" height="384" aria-hidden="true"></canvas>
@@ -102,8 +116,8 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
       </form>
     </section>
   </div>
-  <span class="caption" data-copy="caption">Lua · Estação CRT</span>
 </main>
+<footer class="site-footer"><span class="caption" data-copy="caption">Lua · Estação CRT</span></footer>
 
 <dialog id="preview" aria-labelledby="preview-title">
   <div class="dialog-bar"><strong id="preview-title"></strong><button type="button" class="action" id="close" data-copy="close">Fechar ×</button></div>
@@ -147,6 +161,7 @@ iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:blo
 <script>
 const pt = {
   terminal: 'Terminal lunar', terminalLabel: 'Terminal de currículos', portfolio: 'PORTFÓLIO / CV',
+  portfolioLink: 'Portfólio', siteNav: 'Links do Jorge',
   caption: 'Lua · Estação CRT', send: 'Enviar ↵', inputLabel: 'Digite uma opção',
   close: 'Fechar ×', previewTitle: 'Visualização do currículo',
   language: 'Idioma', languageLabel: 'Idioma do currículo',
@@ -169,6 +184,7 @@ const pt = {
 };
 const en = {
   terminal: 'Lunar terminal', terminalLabel: 'Résumé terminal', portfolio: 'PORTFOLIO / CV',
+  portfolioLink: 'Portfolio', siteNav: 'Jorge’s links',
   caption: 'Moon · CRT station', send: 'Send ↵', inputLabel: 'Enter an option',
   close: 'Close ×', previewTitle: 'Résumé preview',
   language: 'Language', languageLabel: 'Résumé language',
@@ -225,6 +241,9 @@ function translate(container) {
   container.querySelectorAll('[data-title]').forEach(el => el.title = copy[el.dataset.title]);
 }
 translate(document);
+document.querySelector('#portfolio-link').href = isPortuguese
+  ? 'https://jcdevportfolio.netlify.app/pt'
+  : 'https://jcdevportfolio.netlify.app/';
 
 function wait(ms) {
   return motion.matches ? Promise.resolve() : new Promise(resolve => setTimeout(resolve, ms));
