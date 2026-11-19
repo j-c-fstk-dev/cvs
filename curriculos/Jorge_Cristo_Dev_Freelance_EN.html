@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jorge Cristo | Freelance Full-Stack Developer</title>
+  <style>
+:root {
+  color-scheme: light;
+  --ink: #162322;
+  --muted: #40504c;
+  --accent: #165d50;
+  --line: #d4dfda;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #eef2ef; color: var(--ink); font-size: 14px; line-height: 1.45; }
+main { max-width: 800px; margin: 32px auto; padding: 44px 52px; background: white; }
+header { border-bottom: 2px solid var(--accent); padding-bottom: 15px; }
+h1 { margin: 0; font-size: 40px; line-height: 1.08; letter-spacing: -.04em; }
+.role { margin: 5px 0 12px; color: var(--accent); font-size: 19px; font-weight: 650; }
+address { display: flex; flex-wrap: wrap; gap: 3px 18px; font-style: normal; font-size: 13px; }
+address > * { overflow-wrap: anywhere; }
+section { margin-top: 17px; }
+h2 { margin: 0 0 6px; border-bottom: 1px solid var(--line); padding-bottom: 3px; color: var(--accent); font-size: 15px; }
+h3 { margin: 0; font-size: 14px; }
+p { margin: 0; }
+section > p + p { margin-top: 4px; }
+article + article { margin-top: 9px; }
+article p { margin-top: 2px; }
+.item-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 10px; align-items: baseline; }
+.meta { color: var(--muted); font-size: 13px; }
+a { color: #12574b; text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 620px) {
+  main { margin: 0; padding: 28px 20px; }
+  h1 { font-size: 35px; }
+}
+@page { size: A4; margin: 14mm 16mm; }
+@media print {
+  body, main { background: white; }
+  body { font-size: 10.5pt; line-height: 1.37; }
+  main { max-width: none; margin: 0; padding: 0; }
+  header { padding-bottom: 9pt; }
+  h1 { font-size: 28pt; }
+  .role { margin: 3pt 0 7pt; font-size: 14pt; }
+  address, .meta { font-size: 9pt; }
+  section { margin-top: 10pt; }
+  h2 { font-size: 11pt; break-after: avoid; }
+  h3 { font-size: 10.5pt; }
+  article { break-inside: avoid; }
+  article + article { margin-top: 5pt; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Jorge Cristo</h1>
+    <p class="role">Freelance Full-Stack Developer</p>
+    <address>
+      <span>Brazil (UTC−3)</span>
+      <a href="mailto:dev.jorge.c@gmail.com">dev.jorge.c@gmail.com</a>
+      <a href="https://github.com/j-c-fstk-dev">github.com/j-c-fstk-dev</a>
+      <a href="https://jcdevportfolio.netlify.app/">jcdevportfolio.netlify.app</a>
+    </address>
+  </header>
+  <section><h2>Profile</h2>
+<p>I build web apps from scratch and help clients fix apps that are already live. I start by understanding the problem, agree on a scope, and hand over the changes with notes on what changed and how to check it. I’ve worked with clients remotely since 2023.</p>
+</section>
+<section><h2>Services</h2>
+<article><div class="item-heading"><h3>Troubleshooting and fixes</h3></div><p>Builds and deployments, login and permissions, Supabase databases, and broken integrations.</p></article>
+<article><div class="item-heading"><h3>Web development and integrations</h3></div><p>Websites, dashboards and product features, including Stripe payments and wallet flows.</p></article>
+<article><div class="item-heading"><h3>Automation and AI</h3></div><p>Connect APIs, webhooks and spreadsheets, and build AI-assisted workflows for recurring tasks.</p></article>
+</section>
+<section><h2>Selected work</h2>
+<article><div class="item-heading"><h3><a href="https://dapp.decleanup.net">DeCleanup Network</a></h3></div><p>Fixed production bugs, implemented features across the front end, back end and database, and reviewed Solidity contracts for an open-source protocol for verified community cleanups.</p></article>
+<article><div class="item-heading"><h3><a href="https://bassforest.earth">Bass Forest</a></h3></div><p>Designed and developed the festival website from scratch as the sole developer. The event links electronic music with World Environment Day and tree planting.</p></article>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/megazord-mvp">Megazord MVP</a></h3></div><p>Built a Cloudflare Worker for trackable links and an n8n workflow that sends Nuvemshop sales events to Google Sheets.</p></article>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/TextbookUpgradeSkill">TextbookUpgradeSkill</a></h3></div><p>Built an open-source AI skill that turns existing teaching materials into workbooks, practical exercises and scripts for video lessons.</p></article>
+</section>
+<section><h2>Tools</h2>
+<p>React, Next.js, TypeScript, Node.js, PostgreSQL, Supabase, Python, n8n, Cloudflare Workers, Solidity</p>
+</section>
+<section><h2>Business background</h2>
+<article><div class="item-heading"><h3>Owner, Brincando em Família Ateliê</h3><span class="meta">2019–present</span></div><p>Manage the online store, website and digital marketing.</p></article>
+</section>
+</main>
+</body>
+</html>

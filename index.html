@@ -1,181 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Cristo - My Professional Documents</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0A0A0A;
-            --card-bg: #1A1A1A;
-            --text-color: #FFFFFF;
-            --accent-color: #00F0FF;
-            --secondary-text: #D1D1D1;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: var(--text-color);
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-        .card {
-            background-color: var(--card-bg);
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.1);
-            text-align: center;
-            max-width: 750px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid rgba(0, 240, 255, 0.2);
-        }
-        .title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            color: var(--text-color);
-        }
-        .subtitle {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            color: var(--secondary-text);
-        }
-        .category-container {
-            width: 100%;
-            margin-top: 2rem;
-        }
-        .category-heading {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-        .category-heading::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: -5px;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-            border-radius: 9999px;
-        }
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            width: 100%;
-            align-items: center;
-        }
-        .link-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 2px solid var(--accent-color);
-            padding: 1rem 2.5rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.6s ease-in-out;
-            opacity: 0.5;
-        }
-        .link-button:hover {
-            background-color: var(--accent-color);
-            color: var(--card-bg);
-            box-shadow: 0 5px 20px rgba(0, 240, 255, 0.3);
-            transform: translateY(-3px);
-        }
-        .link-button.is-visible {
-            opacity: 1;
-        }
-        .link-button.download {
-            background-color: var(--accent-color);
-            color: var(--card-bg);
-        }
-        .link-button.download:hover {
-            background-color: rgba(0, 240, 255, 0.8);
-            color: var(--card-bg);
-        }
-        @media (min-width: 768px) {
-            .button-group {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .link-button {
-                flex-grow: 1;
-                min-width: 250px;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terminal lunar — Jorge Cristo</title>
+<style>
+*{box-sizing:border-box}
+:root{color-scheme:dark;--mint:#a7f9c9;--dim:#91b6a1;--edge:#355449}
+body{margin:0;background:#06090b;color:#e5eeeb;font:14px ui-monospace,"SFMono-Regular",Consolas,monospace}
+.stage{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;position:relative;overflow:hidden}
+.scene{position:relative;width:min(100vw,150svh);aspect-ratio:3/2;container-type:inline-size;flex:none}
+.art{display:block;width:100%;height:100%;object-fit:fill}
+.brand{position:absolute;z-index:2;top:clamp(22px,5vh,48px);left:clamp(22px,4vw,64px);display:flex;align-items:center;gap:13px}
+.mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #48665f;border-radius:9px;color:var(--mint);font-weight:bold;background:#101a1bdd}
+.brand strong{display:block;font:600 16px system-ui,sans-serif;letter-spacing:.025em}
+.brand small{display:block;color:#a4b7ba;margin-top:4px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.caption{position:absolute;left:clamp(22px,4vw,64px);bottom:24px;color:#d2dedb;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:#090e12e8;border:1px solid #3b4c4a;border-radius:5px;padding:9px 12px}
+.crt{position:absolute;left:33.56%;top:50.6%;width:29.87%;height:30.1%;border-radius:7% / 8%;overflow:hidden;display:flex;flex-direction:column;padding:clamp(12px,1.25cqw,22px);color:var(--mint);background:radial-gradient(ellipse at 42% 20%,#162c24,#091712 76%,#060f0d);box-shadow:inset 0 0 22px #030b08,0 0 9px #7ef2aa33;border:1px solid #2b4538;font-size:clamp(11px,1.02cqw,16px)}
+.crt::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;background:repeating-linear-gradient(transparent 0 3px,#0002 3px 4px)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:6px;border-bottom:1px solid var(--edge);padding-bottom:.6em;font-size:.75em;letter-spacing:.12em;white-space:nowrap}
+.online{color:var(--dim);display:flex;align-items:center;gap:.55em}
+.online::before{content:"";width:.55em;height:.55em;background:#95ffb9;border-radius:50%;box-shadow:0 0 8px #81f9a9aa}
+.chat{flex:1;min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#426354 transparent;margin:0 -.3em;padding:0 .3em}
+h1,h2{font-weight:700;margin:.48em 0 .22em;font-size:1.46em;line-height:1.15;letter-spacing:-.04em}
+p{margin:0 0 .56em;color:#c2dcca;font-size:.92em;line-height:1.35}
+.options{display:grid;gap:.27em}
+button,a,input{font:inherit}
+button,.action{border:1px solid var(--edge);background:#182d23;color:var(--mint);border-radius:4px;text-decoration:none;cursor:pointer}
+.option{display:grid;grid-template-columns:2em 1fr auto;align-items:center;text-align:left;padding:.25em .55em;min-height:2em;gap:.3em;font-size:.94em}
+.option kbd{font:inherit;color:#a1ecc2;font-size:.88em;letter-spacing:.04em}
+.option:hover,.action:hover,form button:hover{background:#254c38;border-color:#7fdca6}
+:focus-visible{outline:2px solid #d8ffe6;outline-offset:-2px}
+form{display:flex;align-items:center;gap:.55em;margin-top:.52em;padding-top:.46em;border-top:1px solid var(--edge);font-size:.83em}
+form label{font-weight:bold}
+input{min-width:0;flex:1;background:transparent;border:0;color:var(--mint);padding:.35em .25em}
+input::placeholder{color:var(--dim)}
+form button{padding:.25em .55em}
+.reply{margin-top:.5em;color:#e2ffeb}
+.actions{display:flex;gap:.35em;flex-wrap:wrap;margin:.55em 0}
+.action{padding:.42em .55em;font-size:.86em}
+.lang{display:flex;align-items:center;gap:.45em;margin:.5em 0;color:var(--dim);font-size:.85em}
+.lang button{padding:.26em .6em}
+.lang button[aria-pressed=true]{background:#a7f9c9;color:#0c1a13}
+dialog{width:min(960px,94vw);height:min(800px,91svh);padding:0;border:1px solid #4d7763;border-radius:12px;background:#10211a;color:var(--mint)}
+dialog::backdrop{background:#030806dd}
+.dialog-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;height:48px}
+iframe{border:0;width:100%;height:calc(100% - 48px);background:white;display:block}
+@media(max-aspect-ratio: 1/1){
+.stage{min-height:max(100svh,132vw)}
+.scene{width:290vw;max-width:none;margin-left:7vw;transform:translateY(-16vw)}
+.crt{font-size:clamp(10px,3.15vw,18px);padding:clamp(10px,3.5vw,20px)}
+.brand{top:20px}.caption{left:auto;right:20px;bottom:18px}
+}
+@media(min-aspect-ratio:1/1) and (max-height:650px){
+.scene{width:min(100vw,175svh)}
+.brand{top:12px;left:12px}
+.caption{bottom:10px;left:10px}
+.crt{padding:8px}
+}
+</style>
 </head>
 <body>
-    <div class="card">
-        <h1 class="title">Professional Documents</h1>
-        <p class="subtitle">Explore my curated collection of CVs and my translation portfolio.</p>
+<main class="stage">
+  <header class="brand"><span class="mark" aria-hidden="true">JC</span><div><strong>Jorge Cristo</strong><small>Terminal lunar</small></div></header>
+  <div class="scene">
+    <img class="art" src="./assets/terminal-lunar.webp" alt="Monitor bege, teclado, mouse e caixas de som retrô sobre uma mesa na Lua, com a Terra ao fundo">
+    <section class="crt" aria-label="Terminal de currículos">
+      <div class="bar"><span>PORTFÓLIO / CV</span><span class="online">ONLINE</span></div>
+      <div class="chat" id="chat" aria-live="polite"></div>
+      <form id="prompt">
+        <label for="command" aria-label="Digite uma opção">❯</label>
+        <input type="text" id="command" placeholder="Digite 1, 2 ou 3" inputmode="numeric" maxlength="1" autocomplete="off">
+        <button type="submit">Enviar ↵</button>
+      </form>
+    </section>
+  </div>
+  <span class="caption">Lua · Estação CRT</span>
+</main>
 
-        <div class="category-container">
-            <h2 class="category-heading">Developer CVs</h2>
-            <div class="button-group">
-                <a href="./dev-en/index.html" target="_blank" rel="noopener noreferrer" class="link-button">View English CV</a>
-                <a href="./dev-en/Jorge Cristo - Full-Stack Developer CV.pdf" download class="link-button download">Download English CV</a>
+<dialog id="preview" aria-labelledby="preview-title">
+  <div class="dialog-bar"><strong id="preview-title"></strong><button type="button" class="action" id="close">Fechar ×</button></div>
+  <iframe id="document-view" title="Visualização do currículo" sandbox></iframe>
+</dialog>
 
-                <a href="./dev-pt/index.html" target="_blank" rel="noopener noreferrer" class="link-button">Ver Currículo em Português</a>
-                <a href="./dev-pt/Jorge Cristo - Currículo de Desenvolvedor Full-Stack.pdf" download class="link-button download">Baixar Currículo em Português</a>
-            </div>
-        </div>
+<template id="menu">
+  <h1>Olá, eu sou o Jorge.</h1>
+  <p>Qual currículo você quer ver?</p>
+  <div class="options">
+    <button class="option" type="button" data-choice="1"><kbd>01</kbd><span>Desenvolvimento freelance</span><span aria-hidden="true">›</span></button>
+    <button class="option" type="button" data-choice="2"><kbd>02</kbd><span>Desenvolvimento para empresas</span><span aria-hidden="true">›</span></button>
+    <button class="option" type="button" data-choice="3"><kbd>03</kbd><span>Tradução</span><span aria-hidden="true">›</span></button>
+  </div>
+</template>
+<template id="result">
+  <h2></h2>
+  <div class="lang" role="group" aria-label="Idioma do currículo">
+    <span>Idioma</span><button type="button" data-lang="PT">PT</button><button type="button" data-lang="EN">EN</button>
+  </div>
+  <div class="actions">
+    <button type="button" class="action" id="open">Visualizar ↗</button>
+    <a class="action" id="download">Baixar ↓</a>
+    <button type="button" class="action" id="back">Voltar</button>
+  </div>
+  <p class="reply">Valeu pela visita! Foi bom falar com você.</p>
+</template>
+<script>
+const choices = {
+  '1': ['Dev_Freelance', 'Desenvolvimento freelance'],
+  '2': ['Dev_Empresas', 'Desenvolvimento para empresas'],
+  '3': ['Tradutor', 'Tradução']
+};
+const chat = document.querySelector('#chat');
+const form = document.querySelector('#prompt');
+const command = document.querySelector('#command');
+const dialog = document.querySelector('#preview');
+const frame = document.querySelector('#document-view');
+let selection;
+let documentPath;
 
-        <div class="category-container">
-            <h2 class="category-heading">Translator Documents & Portfolio</h2>
-            <div class="button-group">
-                <a href="./tradutor-en/index.html" target="_blank" rel="noopener noreferrer" class="link-button">View Translator CV (EN)</a>
-                <a href="./tradutor-en/Jorge Cristo - Freelance Translator CV.pdf" download class="link-button download">Download Translator CV (EN)</a>
-                
-                <a href="./tradutor-pt/index.html" target="_blank" rel="noopener noreferrer" class="link-button">Ver Currículo de Tradutor (PT)</a>
-                <a href="./tradutor-pt/Jorge Cristo - Currículo de Tradutor Freelancer.pdf" download class="link-button download">Baixar Currículo de Tradutor (PT)</a>
+function show(template) {
+  chat.replaceChildren(document.querySelector('#' + template).content.cloneNode(true));
+  chat.scrollTop = 0;
+}
 
-                <a href="./translation-portfolio/index.html" target="_blank" rel="noopener noreferrer" class="link-button">View Translation Portfolio</a>
-                <a href="./translation-portfolio/Translation Portfolio - Jorge Cristo.pdf" download class="link-button download">Download Translation Portfolio</a>
-            </div>
-        </div>
-    </div>
+function setLanguage(language) {
+  const name = 'Jorge_Cristo_' + selection[0] + '_' + language + '.html';
+  documentPath = './curriculos/' + name;
+  const download = document.querySelector('#download');
+  download.href = documentPath;
+  download.download = name;
+  chat.querySelectorAll('[data-lang]').forEach(button => {
+    button.setAttribute('aria-pressed', button.dataset.lang === language);
+  });
+}
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.link-button');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5
-            };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    } else {
-                        entry.target.classList.remove('is-visible');
-                    }
-                });
-            }, observerOptions);
-            buttons.forEach(button => {
-                observer.observe(button);
-            });
-        });
-    </script>
+function choose(number) {
+  if (!Object.hasOwn(choices, number)) {
+    show('menu');
+    selection = undefined;
+    const message = document.createElement('p');
+    message.className = 'reply';
+    message.textContent = 'Escolha 1, 2 ou 3.';
+    chat.append(message);
+    message.scrollIntoView({block: 'nearest'});
+    return;
+  }
+  selection = choices[number];
+  show('result');
+  chat.querySelector('h2').textContent = selection[1];
+  setLanguage('PT');
+  chat.querySelector('#open').focus({preventScroll:true});
+}
+
+chat.addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (!button) return;
+  if (button.dataset.choice) choose(button.dataset.choice);
+  if (button.dataset.lang) setLanguage(button.dataset.lang);
+  if (button.id === 'back') {
+    const previous = Object.keys(choices).find(key => choices[key] === selection);
+    selection = undefined;
+    show('menu');
+    chat.querySelector('[data-choice="' + previous + '"]').focus({preventScroll:true});
+  }
+  if (button.id === 'open') {
+    document.querySelector('#preview-title').textContent = selection[1];
+    frame.src = documentPath;
+    dialog.showModal();
+  }
+});
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  choose(command.value.trim());
+  command.value = '';
+});
+document.querySelector('#close').addEventListener('click', () => dialog.close());
+dialog.addEventListener('close', () => frame.removeAttribute('src'));
+show('menu');
+</script>
 </body>
 </html>
