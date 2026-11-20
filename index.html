@@ -66,7 +66,7 @@ clip-path:polygon(0 0,100% 0,100% 100%,88.5% 100%,88.3% 57%,87.9% 55.8%,86.9% 54
 @media(prefers-reduced-motion:reduce){.earth{display:none}}
 .site-header,.site-footer{padding-inline:clamp(12px,4vw,64px);background:#06090b}
 .site-header{min-height:var(--header-height);display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #253530}
-.site-footer{min-height:var(--footer-height);display:flex;align-items:center;border-top:1px solid #253530}
+.site-footer{min-height:var(--footer-height);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:16px;border-top:1px solid #253530}
 .brand{display:flex;align-items:center;gap:10px}
 .site-nav{display:flex;align-items:center;gap:clamp(4px,1vw,14px)}
 .site-nav a{display:grid;place-items:center;min-height:44px;padding-inline:clamp(5px,1vw,12px);color:var(--mint);font-size:12px;text-decoration:none;white-space:nowrap}
@@ -140,7 +140,10 @@ body{--header-height:52px;--footer-height:34px}
 .share-dialog .dialog-bar{height:auto;padding:0;margin-bottom:.7em}
 .share-dialog input{display:block;width:100%;border:1px solid var(--edge);padding:.5em}
 @media(prefers-reduced-motion:reduce){.loader-fill{animation:none}}
-  .resume-directory{max-width:760px;margin:auto;padding:28px clamp(16px,4vw,32px) 40px}
+  .resume-directory{min-width:0;margin-inline-start:auto}
+  .resume-directory[open]{flex-basis:100%}
+  .resume-directory summary{padding:14px 0;color:var(--mint);cursor:pointer;font-size:12px}
+  .resume-directory section{max-width:760px;margin:auto;padding:16px 0 28px}
   .resume-directory h1{margin:0 0 12px}
   .resume-directory p{max-width:65ch}
   .resume-directory ul{margin:14px 0 0;padding-inline-start:1.25em}
@@ -174,7 +177,11 @@ body{--header-height:52px;--footer-height:34px}
     </section>
   </div>
 </main>
-<section class="resume-directory" lang="en" aria-labelledby="resume-directory-title">
+<footer class="site-footer">
+<span class="caption" data-copy="caption">Lua · Estação CRT</span>
+<details class="resume-directory">
+<summary data-copy="directResumes">Direct résumé links</summary>
+<section lang="en" aria-labelledby="resume-directory-title">
   <h1 id="resume-directory-title">Jorge Cristo — Résumés</h1>
   <p>Jorge Cristo is a full-stack developer based in Brazil (UTC−3) who works remotely. His work includes fixing React, Next.js, and Node.js applications, developing Web3 tools, and automating workflows with n8n, Python, and APIs.</p>
   <p>He also translates digital and technical content from English to Brazilian Portuguese.</p>
@@ -184,7 +191,8 @@ body{--header-height:52px;--footer-height:34px}
   <li>English to Brazilian Portuguese Translator · <a lang="en" href="./curriculos/Jorge_Cristo_Tradutor_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Tradutor_PT.html">Português</a></li>
   </ul>
 </section>
-<footer class="site-footer"><span class="caption" data-copy="caption">Lua · Estação CRT</span></footer>
+</details>
+</footer>
 
 <dialog id="preview" aria-labelledby="preview-title">
   <div class="dialog-bar"><strong id="preview-title"></strong><button type="button" class="action" id="close" data-copy="close">Fechar ×</button></div>
@@ -228,6 +236,7 @@ body{--header-height:52px;--footer-height:34px}
 <script>
 const pt = {
   terminal: 'Terminal lunar', terminalLabel: 'Terminal de currículos', portfolio: 'PORTFÓLIO / CV',
+  directResumes: 'Links dos currículos',
   portfolioLink: 'Portfólio', siteNav: 'Links do Jorge',
   caption: 'Lua · Estação CRT', send: 'Enviar ↵', inputLabel: 'Digite uma opção',
   close: 'Fechar ×', previewTitle: 'Visualização do currículo',
@@ -252,6 +261,7 @@ const pt = {
 };
 const en = {
   terminal: 'Lunar terminal', terminalLabel: 'Résumé terminal', portfolio: 'PORTFOLIO / CV',
+  directResumes: 'Direct résumé links',
   portfolioLink: 'Portfolio', siteNav: 'Jorge’s links',
   caption: 'Moon · CRT station', send: 'Send ↵', inputLabel: 'Enter an option',
   close: 'Close ×', previewTitle: 'Résumé preview',
