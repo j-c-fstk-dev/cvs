@@ -1,9 +1,57 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terminal lunar — Jorge Cristo</title>
+<title>Jorge Cristo — Full-Stack Developer Résumés | Freelance, Companies &amp; Translation</title>
+<link rel="canonical" href="https://j-c-fstk-dev.github.io/cvs/">
+<meta name="description" content="Jorge Cristo, full-stack developer based in Brazil. Résumés for freelance development, company roles, and English to Brazilian Portuguese translation.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jorge Cristo — Full-Stack Developer Résumés | Freelance, Companies &amp; Translation">
+<meta property="og:description" content="Jorge Cristo, full-stack developer based in Brazil. Résumés for freelance development, company roles, and English to Brazilian Portuguese translation.">
+<meta property="og:url" content="https://j-c-fstk-dev.github.io/cvs/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://j-c-fstk-dev.github.io/cvs/assets/terminal-lunar-social.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Terminal Lunar — Jorge Cristo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jorge Cristo — Full-Stack Developer Résumés | Freelance, Companies &amp; Translation">
+<meta name="twitter:description" content="Jorge Cristo, full-stack developer based in Brazil. Résumés for freelance development, company roles, and English to Brazilian Portuguese translation.">
+<meta name="twitter:image" content="https://j-c-fstk-dev.github.io/cvs/assets/terminal-lunar-social.jpg">
+<meta name="twitter:image:alt" content="Terminal Lunar — Jorge Cristo">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://j-c-fstk-dev.github.io/cvs/#jorge-cristo",
+  "name": "Jorge Cristo",
+  "jobTitle": [
+    "Full-Stack Developer",
+    "English to Brazilian Portuguese Translator"
+  ],
+  "url": "https://j-c-fstk-dev.github.io/cvs/",
+  "sameAs": [
+    "https://github.com/j-c-fstk-dev",
+    "https://jcdevportfolio.netlify.app/"
+  ],
+  "knowsAbout": [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Solidity",
+    "Web3",
+    "Python",
+    "n8n",
+    "Technical translation"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  }
+}
+</script>
 <style>
 *{box-sizing:border-box}
 :root{color-scheme:dark;--mint:#a7f9c9;--dim:#91b6a1;--edge:#355449}
@@ -92,7 +140,14 @@ body{--header-height:52px;--footer-height:34px}
 .share-dialog .dialog-bar{height:auto;padding:0;margin-bottom:.7em}
 .share-dialog input{display:block;width:100%;border:1px solid var(--edge);padding:.5em}
 @media(prefers-reduced-motion:reduce){.loader-fill{animation:none}}
+  .resume-directory{max-width:760px;margin:auto;padding:28px clamp(16px,4vw,32px) 40px}
+  .resume-directory h1{margin:0 0 12px}
+  .resume-directory p{max-width:65ch}
+  .resume-directory ul{margin:14px 0 0;padding-inline-start:1.25em}
+  .resume-directory li{margin:.7em 0;line-height:1.45}
+  .resume-directory a{color:var(--mint);text-underline-offset:3px}
 </style>
+<noscript><style>.stage{display:none}</style></noscript>
 <script>document.documentElement.classList.add('scene-pending');</script>
 </head>
 <body>
@@ -119,6 +174,16 @@ body{--header-height:52px;--footer-height:34px}
     </section>
   </div>
 </main>
+<section class="resume-directory" lang="en" aria-labelledby="resume-directory-title">
+  <h1 id="resume-directory-title">Jorge Cristo — Résumés</h1>
+  <p>Jorge Cristo is a full-stack developer based in Brazil (UTC−3) who works remotely. His work includes fixing React, Next.js, and Node.js applications, developing Web3 tools, and automating workflows with n8n, Python, and APIs.</p>
+  <p>He also translates digital and technical content from English to Brazilian Portuguese.</p>
+  <ul>
+  <li>Freelance Full-Stack Developer · <a lang="en" href="./curriculos/Jorge_Cristo_Dev_Freelance_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Dev_Freelance_PT.html">Português</a></li>
+  <li>Full-Stack Developer · <a lang="en" href="./curriculos/Jorge_Cristo_Dev_Empresas_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Dev_Empresas_PT.html">Português</a></li>
+  <li>English to Brazilian Portuguese Translator · <a lang="en" href="./curriculos/Jorge_Cristo_Tradutor_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Tradutor_PT.html">Português</a></li>
+  </ul>
+</section>
 <footer class="site-footer"><span class="caption" data-copy="caption">Lua · Estação CRT</span></footer>
 
 <dialog id="preview" aria-labelledby="preview-title">
@@ -134,7 +199,7 @@ body{--header-height:52px;--footer-height:34px}
 
 <template id="menu">
   <div class="intro">
-    <h1></h1>
+    <h2></h2>
     <p></p>
     <p></p>
   </div>
@@ -242,7 +307,7 @@ let transitioning = false;
 let shareSession = new AbortController();
 
 document.documentElement.lang = isPortuguese ? 'pt-BR' : 'en';
-document.title = copy.terminal + ' — Jorge Cristo';
+if (isPortuguese) document.title = 'Jorge Cristo — Currículos de Desenvolvimento Full-Stack e Tradução';
 document.querySelector('[data-alt]').alt = copy.alt;
 command.placeholder = copy.menuPrompt;
 
@@ -305,7 +370,7 @@ function populateMenu() {
     button.querySelector('strong').textContent = copy.choices[index];
     button.querySelector('small').textContent = copy.descriptions[index];
   });
-  return chat.querySelectorAll('.intro h1, .intro p');
+  return chat.querySelectorAll('.intro h2, .intro p');
 }
 
 function focusPrompt() {

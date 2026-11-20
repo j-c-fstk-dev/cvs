@@ -1,0 +1,18 @@
+# Jorge Cristo
+
+> Full-stack developer based in Brazil (UTC−3), working remotely. Also translates technical and digital content from English to Brazilian Portuguese.
+
+## Main links
+
+- [Portfolio](https://jcdevportfolio.netlify.app/)
+- [Terminal Lunar résumés](https://j-c-fstk-dev.github.io/cvs/)
+- [GitHub](https://github.com/j-c-fstk-dev)
+
+## Résumés
+
+- [Desenvolvedor Full-Stack Freelancer (PT)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Dev_Freelance_PT.html)
+- [Freelance Full-Stack Developer (EN)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Dev_Freelance_EN.html)
+- [Desenvolvedor Full-Stack (PT)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Dev_Empresas_PT.html)
+- [Full-Stack Developer (EN)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Dev_Empresas_EN.html)
+- [Tradutor de inglês para português brasileiro (PT)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Tradutor_PT.html)
+- [English to Brazilian Portuguese Translator (EN)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Tradutor_EN.html)
