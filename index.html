@@ -40,6 +40,8 @@ p{margin:0 0 .56em;color:#c2dcca;font-size:.92em;line-height:1.35}
 button,a,input{font:inherit}
 button,.action{border:1px solid var(--edge);background:#182d23;color:var(--mint);border-radius:4px;text-decoration:none;cursor:pointer}
 .option{display:grid;grid-template-columns:2em 1fr auto;align-items:center;text-align:left;padding:.25em .55em;min-height:2em;gap:.3em;font-size:.94em}
+.option-copy{min-width:0}
+.option-copy small{display:block;color:#b9d7c5;font-size:.82em;line-height:1.2}
 .option kbd{font:inherit;color:#a1ecc2;font-size:.88em;letter-spacing:.04em}
 .option:hover,.action:hover,form button:hover{background:#254c38;border-color:#7fdca6}
 :focus-visible{outline:2px solid #d8ffe6;outline-offset:-2px}
@@ -54,7 +56,7 @@ form button{padding:.25em .55em}
 .actions{display:flex;gap:.35em;flex-wrap:wrap;margin:.55em 0}
 .action{padding:.42em .55em;font-size:.86em}
 .lang{display:flex;align-items:center;gap:.45em;margin:.5em 0;color:var(--dim);font-size:.85em}
-.lang button{padding:.26em .6em}
+.lang button{padding:.35em .7em;min-height:2.5em;min-width:3em;font-weight:700}
 .lang button[aria-pressed=true]{background:#a7f9c9;color:#0c1a13}
 dialog{width:min(960px,94vw);height:min(800px,91svh);padding:0;border:1px solid #4d7763;border-radius:12px;background:#10211a;color:var(--mint)}
 dialog::backdrop{background:#030806dd}
@@ -137,9 +139,9 @@ body{--header-height:52px;--footer-height:34px}
     <p></p>
   </div>
   <div class="options" hidden>
-    <button class="option" type="button" data-choice="1"><kbd>01</kbd><span></span><span aria-hidden="true">›</span></button>
-    <button class="option" type="button" data-choice="2"><kbd>02</kbd><span></span><span aria-hidden="true">›</span></button>
-    <button class="option" type="button" data-choice="3"><kbd>03</kbd><span></span><span aria-hidden="true">›</span></button>
+    <button class="option" type="button" data-choice="1"><kbd>01</kbd><span class="option-copy"><strong></strong><small></small></span><span aria-hidden="true">›</span></button>
+    <button class="option" type="button" data-choice="2"><kbd>02</kbd><span class="option-copy"><strong></strong><small></small></span><span aria-hidden="true">›</span></button>
+    <button class="option" type="button" data-choice="3"><kbd>03</kbd><span class="option-copy"><strong></strong><small></small></span><span aria-hidden="true">›</span></button>
   </div>
   <div class="contact" hidden><p></p><a class="action" data-copy="email" hidden>Enviar e-mail</a></div>
   <p class="reply" role="status" hidden></p>
@@ -164,11 +166,12 @@ const pt = {
   portfolioLink: 'Portfólio', siteNav: 'Links do Jorge',
   caption: 'Lua · Estação CRT', send: 'Enviar ↵', inputLabel: 'Digite uma opção',
   close: 'Fechar ×', previewTitle: 'Visualização do currículo',
-  language: 'Idioma', languageLabel: 'Idioma do currículo',
+  language: 'Idioma do currículo', languageLabel: 'Idioma do currículo',
   share: 'Compartilhar link', back: 'Voltar', email: 'Enviar e-mail',
   connect: 'Conectando ao servidor lunar…', connected: 'Conexão estabelecida.', loading: 'Carregando currículos…',
-  intro: ['Olá, Jorge aqui.', 'Procurando meu currículo?', 'Tenho três opções. Escolha a que mais te interessa.'],
-  choices: ['Desenvolvimento freelance', 'Desenvolvimento para empresas', 'Tradução'],
+  intro: ['Oi, sou o Jorge.', 'Estabilizo aplicações, entrego funcionalidades e crio ferramentas Web3.', 'Escolha o currículo certo para você:'],
+  choices: ['Freelance', 'Empresas', 'Tradução'],
+  descriptions: ['Correções · integrações · Web3 · automação', 'Full-stack · produto · estabilização', 'EN → PT-BR · conteúdo digital e técnico'],
   thanks: 'Obrigado pela visita!', contact: 'Quer entrar em contato? É só clicar abaixo para me enviar um e-mail.',
   hint: 'Digite help para ver os comandos',
   actionOpen: '1 Visualizar', actionDownload: '2 Baixar', actionShare: '3 Compartilhar',
@@ -187,11 +190,12 @@ const en = {
   portfolioLink: 'Portfolio', siteNav: 'Jorge’s links',
   caption: 'Moon · CRT station', send: 'Send ↵', inputLabel: 'Enter an option',
   close: 'Close ×', previewTitle: 'Résumé preview',
-  language: 'Language', languageLabel: 'Résumé language',
+  language: 'Résumé language', languageLabel: 'Résumé language',
   share: 'Share link', back: 'Back', email: 'Send email',
   connect: 'Connecting to the lunar server…', connected: 'Connection established.', loading: 'Loading résumés…',
-  intro: ['Hi, Jorge here.', 'Looking for my résumé?', 'I have three options. Pick the one that suits you best.'],
-  choices: ['Freelance development', 'Development for companies', 'Translation'],
+  intro: ['Hi, Jorge here.', 'I stabilize apps, ship features and build Web3 tools.', 'Choose the résumé that fits:'],
+  choices: ['Freelance', 'Companies', 'Translation'],
+  descriptions: ['Bug fixes · integrations · Web3 · automation', 'Full-stack · product · stabilization', 'EN → PT-BR · digital and technical content'],
   thanks: 'Thanks for stopping by!', contact: 'Want to get in touch? Click below to send me an email.',
   hint: 'Type help to see commands',
   actionOpen: '1 View', actionDownload: '2 Download', actionShare: '3 Share',
@@ -208,7 +212,13 @@ const en = {
 const languages = navigator.languages?.length ? navigator.languages : [navigator.language || ''];
 const preferred = languages.map(language => language.toLowerCase().split('-')[0])
   .find(language => language === 'pt' || language === 'en');
-const isPortuguese = preferred === 'pt';
+const variants = ['freelance', 'companies', 'translation'];
+const query = new URLSearchParams(location.search);
+const initialSelection = variants.indexOf(query.get('v'));
+const requestedLanguage = query.get('lang');
+const initialLanguage = initialSelection >= 0 && ['pt', 'en'].includes(requestedLanguage)
+  ? requestedLanguage : preferred;
+const isPortuguese = initialLanguage === 'pt';
 const copy = isPortuguese ? pt : en;
 const categories = ['Dev_Freelance', 'Dev_Empresas', 'Tradutor'];
 const emails = ['dev.jorge.c@gmail.com', 'dev.jorge.c@gmail.com', 'cristtranslations@gmail.com'];
@@ -225,6 +235,7 @@ const touch = matchMedia('(pointer: coarse)');
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
 let selection;
 let documentPath;
+let resumeLanguage;
 let opening;
 let sharing = false;
 let transitioning = false;
@@ -291,7 +302,8 @@ async function loader(message, duration, before = null) {
 
 function populateMenu() {
   chat.querySelectorAll('[data-choice]').forEach((button, index) => {
-    button.querySelector('span').textContent = copy.choices[index];
+    button.querySelector('strong').textContent = copy.choices[index];
+    button.querySelector('small').textContent = copy.descriptions[index];
   });
   return chat.querySelectorAll('.intro h1, .intro p');
 }
@@ -301,13 +313,19 @@ function focusPrompt() {
 }
 
 async function boot() {
+  if (initialSelection >= 0) {
+    markOnline();
+    showResult(initialSelection);
+    form.hidden = false;
+    hint.hidden = false;
+    openPreview();
+    return;
+  }
   status.textContent = isPortuguese ? 'CONECTANDO' : 'CONNECTING';
   chat.dataset.connecting = '';
   await loader(copy.connect, 3000);
   delete chat.dataset.connecting;
-  status.textContent = 'ONLINE';
-  status.setAttribute('data-ready', '');
-  status.title = copy.connected;
+  markOnline();
   show('menu');
   const lines = populateMenu();
   for (const [index, line] of Array.from(lines).entries()) {
@@ -322,7 +340,14 @@ async function boot() {
   focusPrompt();
 }
 
+function markOnline() {
+  status.textContent = 'ONLINE';
+  status.setAttribute('data-ready', '');
+  status.title = copy.connected;
+}
+
 function setLanguage(language) {
+  resumeLanguage = language;
   const name = 'Jorge_Cristo_' + categories[selection] + '_' + language + '.html';
   documentPath = './curriculos/' + name;
   const download = document.querySelector('#download');
@@ -350,7 +375,12 @@ async function transition(message, duration = 1000) {
 
 async function choose(number) {
   await transition(copy.opening);
-  selection = Number(number) - 1;
+  showResult(Number(number) - 1);
+  focusPrompt();
+}
+
+function showResult(index) {
+  selection = index;
   command.placeholder = copy.actionPrompt;
   show('result');
   chat.querySelector('h2').textContent = copy.choices[selection];
@@ -359,7 +389,6 @@ async function choose(number) {
     chat.querySelector('#back').textContent = copy.backMobile;
   }
   setLanguage(isPortuguese ? 'PT' : 'EN');
-  focusPrompt();
 }
 
 function runCommand(value) {
@@ -419,7 +448,10 @@ async function share() {
   if (sharing) return;
   sharing = true;
   const line = chat.querySelector('.reply');
-  const url = new URL(documentPath, document.baseURI).href;
+  const link = new URL(location.pathname, location.origin);
+  link.searchParams.set('v', variants[selection]);
+  link.searchParams.set('lang', resumeLanguage.toLowerCase());
+  const url = link.href;
   try {
     if (navigator.share) {
       try {
@@ -462,19 +494,28 @@ chat.addEventListener('click', event => {
   }
   if (control.id === 'share') void share();
   if (control.id === 'download') thank();
-  if (control.id === 'open') {
-    document.querySelector('#preview-title').textContent = copy.choices[selection];
-    frame.src = documentPath;
-    opening = chat.querySelector('.reply');
-    dialog.showModal();
-  }
+  if (control.id === 'open') openPreview();
 });
+
+function openPreview() {
+  document.querySelector('#preview-title').textContent = copy.choices[selection];
+  frame.src = documentPath;
+  opening = chat.querySelector('.reply');
+  dialog.showModal();
+}
 
 form.addEventListener('submit', event => {
   event.preventDefault();
   runCommand(command.value.trim().toLowerCase());
 });
 document.addEventListener('keydown', event => {
+  if (selection === undefined && !form.hidden && !transitioning && !event.defaultPrevented &&
+      !event.repeat && !event.ctrlKey && !event.altKey && !event.metaKey && !event.isComposing &&
+      !event.target.closest('input, textarea, select, [contenteditable]') && /^[123]$/.test(event.key)) {
+    event.preventDefault();
+    runCommand(event.key);
+    return;
+  }
   if (touch.matches || transitioning || selection === undefined || dialog.open || shareDialog.open ||
       event.ctrlKey || event.altKey || event.metaKey || event.isComposing) return;
   if (event.key === 'Escape') {
