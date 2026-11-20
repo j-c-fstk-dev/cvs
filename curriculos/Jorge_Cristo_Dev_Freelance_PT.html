@@ -49,6 +49,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   h2 { font-size: 11pt; break-after: avoid; }
   h3 { font-size: 10.5pt; }
   article { break-inside: avoid; }
+  .project-page { break-before: page; margin-top: 0; }
   article + article { margin-top: 5pt; }
 }
 </style>
@@ -57,16 +58,17 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 <main>
   <header>
     <h1>Jorge Cristo</h1>
-    <p class="role">Desenvolvedor Full-Stack Freelancer</p>
+    <p class="role">Desenvolvedor Full-Stack Freelancer · Web, Integrações e Automação</p>
     <address>
       <span>Brasil (UTC−3)</span>
       <a href="mailto:dev.jorge.c@gmail.com">dev.jorge.c@gmail.com</a>
       <a href="https://github.com/j-c-fstk-dev">github.com/j-c-fstk-dev</a>
       <a href="https://jcdevportfolio.netlify.app/">jcdevportfolio.netlify.app</a>
+    <span>Inglês avançado</span>
     </address>
   </header>
   <section><h2>Perfil</h2>
-<p>Desenvolvo aplicações web do zero e ajudo clientes a corrigir sistemas que já estão no ar. Começo pelo diagnóstico, combino o escopo e entrego as mudanças com um resumo do que foi feito e de como conferir. Atendo clientes remotamente desde 2023.</p>
+<p>Corrijo problemas de build, login, permissões e integrações em aplicações existentes. Também desenvolvo sites, dashboards e automações. Atendimento remoto desde 2023, em português e inglês, com escopo combinado e instruções para conferir a entrega.</p>
 </section>
 <section><h2>Serviços</h2>
 <article><div class="item-heading"><h3>Diagnóstico e correção de bugs</h3></div><p>Problemas de build e deploy, login e permissões, bancos de dados no Supabase e integrações com falha.</p></article>
@@ -74,16 +76,22 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 <article><div class="item-heading"><h3>Automação e IA</h3></div><p>Integração de APIs, webhooks e planilhas e criação de fluxos com IA para tarefas recorrentes.</p></article>
 </section>
 <section><h2>Trabalhos selecionados</h2>
-<article><div class="item-heading"><h3><a href="https://dapp.decleanup.net">DeCleanup Network</a></h3></div><p>Corrigi bugs em produção, implementei funcionalidades no front-end, back-end e banco de dados e revisei contratos em Solidity para um protocolo de código aberto que registra mutirões de limpeza verificados.</p></article>
-<article><div class="item-heading"><h3><a href="https://bassforest.earth">Bass Forest</a></h3></div><p>Projetei e desenvolvi sozinho, do zero, o site de um festival que conecta música eletrônica, Dia Mundial do Meio Ambiente e plantio de árvores.</p></article>
-<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/megazord-mvp">Megazord MVP</a></h3></div><p>Implementei um Cloudflare Worker para links rastreáveis e um fluxo no n8n que envia eventos de venda da Nuvemshop para o Google Sheets.</p></article>
+<article><div class="item-heading"><h3><a href="https://dapp.decleanup.net">DeCleanup Network</a></h3><span class="meta">dez. 2025–atual</span></div><p><strong>Correção em aplicação existente.</strong> Corrigi falhas de hidratação e build no módulo de emissão de Hypercerts em Next.js. <a href="https://github.com/DeCleanup-Network/decleanup-main-celo/pull/33">PR #33</a></p></article>
+<article><div class="item-heading"><h3><a href="https://beregen.xyz">BeRegen</a></h3></div><p><strong>Desenvolvimento web.</strong> Desenvolvi o site da BeRegen, que apresenta a iniciativa e reúne seus projetos de tecnologia e regeneração.</p></article>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/megazord-mvp">Megazord MVP</a></h3></div><p><strong>Automação de marketing.</strong> Automatizei o envio de eventos de venda da Nuvemshop ao Google Sheets via n8n e implementei o rastreamento de cliques em Cloudflare Workers.</p><p>Projetei uma arquitetura de cinco módulos para reunir cliques, vendas, métricas de stories e mensagens diretas em um resumo diário para produção de conteúdo.</p></article>
 <article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/TextbookUpgradeSkill">TextbookUpgradeSkill</a></h3></div><p>Criei uma skill de IA de código aberto que transforma materiais didáticos existentes em apostilas, atividades práticas e roteiros para videoaulas.</p></article>
 </section>
+<section class="project-page"><h2>Projetos de produto</h2>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/rastro">Rastro</a></h3></div><p>PWA em React que registra ações de regeneração sem conexão, sincroniza os registros quando a rede volta e coleta confirmações assinadas de testemunhas via Nostr.</p></article>
+<article><div class="item-heading"><h3><a href="https://matrix-operator.netlify.app/">Operator</a></h3></div><p>Aplicação de gestão de projetos em React e TypeScript, com navegação por teclado e armazenamento local. Implementei uma fila persistente que guarda alterações offline e, quando a sincronização está ativa, envia as mudanças ao Supabase assim que a conexão volta.</p></article>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/clipvault">ClipVault</a></h3></div><p>Gerenciador da área de transferência para Linux em Rust, Tauri e React. Captura eventos do X11 e mantém o histórico em SQLite.</p></article>
+</section>
 <section><h2>Ferramentas</h2>
-<p>React, Next.js, TypeScript, Node.js, PostgreSQL, Supabase, Python, n8n, Cloudflare Workers, Solidity</p>
+<p><strong>Aplicações web:</strong> React, Next.js, TypeScript, Node.js. <strong>Bancos de dados:</strong> PostgreSQL, Supabase.</p>
+<p><strong>Integrações e outras linguagens:</strong> Python, n8n, Cloudflare Workers, Solidity, Kotlin, Rust.</p>
 </section>
 <section><h2>Experiência em negócios</h2>
-<article><div class="item-heading"><h3>Proprietário do Brincando em Família Ateliê</h3><span class="meta">2019–atual</span></div><p>Gerencio a loja virtual, o site e o marketing digital.</p></article>
+<article><div class="item-heading"><h3>Proprietário do Brincando em Família Ateliê</h3><span class="meta">2019–atual</span></div><p>Gestão da loja virtual, do site e do marketing digital. Fabricação manual de todos os brinquedos e móveis de madeira do ateliê.</p></article>
 </section>
 </main>
 </body>

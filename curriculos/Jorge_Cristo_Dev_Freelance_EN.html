@@ -49,6 +49,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   h2 { font-size: 11pt; break-after: avoid; }
   h3 { font-size: 10.5pt; }
   article { break-inside: avoid; }
+  .project-page { break-before: page; margin-top: 0; }
   article + article { margin-top: 5pt; }
 }
 </style>
@@ -57,16 +58,17 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 <main>
   <header>
     <h1>Jorge Cristo</h1>
-    <p class="role">Freelance Full-Stack Developer</p>
+    <p class="role">Freelance Full-Stack Developer · Web, Integrations, and Automation</p>
     <address>
       <span>Brazil (UTC−3)</span>
       <a href="mailto:dev.jorge.c@gmail.com">dev.jorge.c@gmail.com</a>
       <a href="https://github.com/j-c-fstk-dev">github.com/j-c-fstk-dev</a>
       <a href="https://jcdevportfolio.netlify.app/">jcdevportfolio.netlify.app</a>
+    <span>Advanced English</span>
     </address>
   </header>
   <section><h2>Profile</h2>
-<p>I build web apps from scratch and help clients fix apps that are already live. I start by understanding the problem, agree on a scope, and hand over the changes with notes on what changed and how to check it. I’ve worked with clients remotely since 2023.</p>
+<p>I fix build, sign-in, permissions, and integration issues in existing applications. I also build websites, dashboards, and automations. Since 2023, I have worked remotely with an agreed scope and clear steps to verify delivery, in Portuguese and English.</p>
 </section>
 <section><h2>Services</h2>
 <article><div class="item-heading"><h3>Troubleshooting and fixes</h3></div><p>Builds and deployments, login and permissions, Supabase databases, and broken integrations.</p></article>
@@ -74,16 +76,22 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 <article><div class="item-heading"><h3>Automation and AI</h3></div><p>Connect APIs, webhooks and spreadsheets, and build AI-assisted workflows for recurring tasks.</p></article>
 </section>
 <section><h2>Selected work</h2>
-<article><div class="item-heading"><h3><a href="https://dapp.decleanup.net">DeCleanup Network</a></h3></div><p>Fixed production bugs, implemented features across the front end, back end and database, and reviewed Solidity contracts for an open-source protocol for verified community cleanups.</p></article>
-<article><div class="item-heading"><h3><a href="https://bassforest.earth">Bass Forest</a></h3></div><p>Designed and developed the festival website from scratch as the sole developer. The event links electronic music with World Environment Day and tree planting.</p></article>
-<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/megazord-mvp">Megazord MVP</a></h3></div><p>Built a Cloudflare Worker for trackable links and an n8n workflow that sends Nuvemshop sales events to Google Sheets.</p></article>
+<article><div class="item-heading"><h3><a href="https://dapp.decleanup.net">DeCleanup Network</a></h3><span class="meta">Dec 2025–present</span></div><p><strong>Fixes in an existing application.</strong> Fixed hydration and build issues in the Next.js Hypercert minting module. <a href="https://github.com/DeCleanup-Network/decleanup-main-celo/pull/33">PR #33</a></p></article>
+<article><div class="item-heading"><h3><a href="https://beregen.xyz">BeRegen</a></h3></div><p><strong>Web development.</strong> Built the BeRegen website to introduce the initiative and showcase its technology and regeneration projects.</p></article>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/megazord-mvp">Megazord MVP</a></h3></div><p><strong>Marketing automation.</strong> I automated the transfer of Nuvemshop sales events to Google Sheets via n8n and implemented click tracking on Cloudflare Workers.</p><p>I designed a five-module architecture to bring clicks, sales, Stories metrics, and direct messages into a daily content brief.</p></article>
 <article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/TextbookUpgradeSkill">TextbookUpgradeSkill</a></h3></div><p>Built an open-source AI skill that turns existing teaching materials into workbooks, practical exercises and scripts for video lessons.</p></article>
 </section>
+<section class="project-page"><h2>Product projects</h2>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/rastro">Rastro</a></h3></div><p>React PWA that records regenerative activities offline, syncs records when connectivity returns, and collects signed witness attestations via Nostr.</p></article>
+<article><div class="item-heading"><h3><a href="https://matrix-operator.netlify.app/">Operator</a></h3></div><p>Keyboard-first project workspace built with React and TypeScript, with local storage. I implemented a persistent queue that keeps offline edits and sends them to Supabase when the connection returns if sync is enabled.</p></article>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/clipvault">ClipVault</a></h3></div><p>Linux clipboard manager built with Rust, Tauri, and React. Captures X11 clipboard events and stores a persistent history in SQLite.</p></article>
+</section>
 <section><h2>Tools</h2>
-<p>React, Next.js, TypeScript, Node.js, PostgreSQL, Supabase, Python, n8n, Cloudflare Workers, Solidity</p>
+<p><strong>Web applications:</strong> React, Next.js, TypeScript, Node.js. <strong>Databases:</strong> PostgreSQL, Supabase.</p>
+<p><strong>Integrations and other languages:</strong> Python, n8n, Cloudflare Workers, Solidity, Kotlin, Rust.</p>
 </section>
 <section><h2>Business background</h2>
-<article><div class="item-heading"><h3>Owner, Brincando em Família Ateliê</h3><span class="meta">2019–present</span></div><p>Manage the online store, website and digital marketing.</p></article>
+<article><div class="item-heading"><h3>Owner, Brincando em Família Ateliê</h3><span class="meta">2019–present</span></div><p>Online store, website, and digital marketing management. Handcrafting of all wooden toys and furniture.</p></article>
 </section>
 </main>
 </body>

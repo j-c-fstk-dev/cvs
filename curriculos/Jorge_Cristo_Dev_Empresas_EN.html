@@ -28,6 +28,8 @@ p { margin: 0; }
 section > p + p { margin-top: 4px; }
 article + article { margin-top: 9px; }
 article p { margin-top: 2px; }
+.contributions { margin: 3px 0 0; padding-inline-start: 18px; }
+.contributions li + li { margin-top: 2px; }
 .item-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 10px; align-items: baseline; }
 .meta { color: var(--muted); font-size: 13px; }
 a { color: #12574b; text-underline-offset: 2px; }
@@ -45,10 +47,11 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   h1 { font-size: 28pt; }
   .role { margin: 3pt 0 7pt; font-size: 14pt; }
   address, .meta { font-size: 9pt; }
-  section { margin-top: 10pt; }
+  section { margin-top: 8pt; }
   h2 { font-size: 11pt; break-after: avoid; }
   h3 { font-size: 10.5pt; }
   article { break-inside: avoid; }
+  .project-page { break-before: page; margin-top: 0; }
   article + article { margin-top: 5pt; }
 }
 </style>
@@ -66,20 +69,21 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     </address>
   </header>
   <section><h2>Profile</h2>
-<p>Full-stack developer with a background in production engineering. I build web applications with React, TypeScript and Node.js, and work across the front end, APIs and databases. Since 2023, I’ve delivered client projects and fixed issues in existing production applications.</p>
-</section>
-<section><h2>Technical skills</h2>
-<p>React, Next.js, TypeScript, JavaScript, Node.js, REST APIs, PostgreSQL, Supabase (Auth and RLS), Git</p>
-<p>Python for data and automation · n8n · Stripe API · Solidity and EVM</p>
+<p>Full-stack developer with a degree in Production Engineering. I build web applications that work offline, synchronize data, and integrate payments. My experience includes stabilizing existing applications, developing products with React and TypeScript, and building desktop tools in Rust.</p>
 </section>
 <section><h2>Experience</h2>
-<article><div class="item-heading"><h3>Freelance Full-Stack Developer · <a href="https://dapp.decleanup.net">DeCleanup Network</a></h3><span class="meta">2023–present</span></div><p>Worked on an open-source protocol that records verified community cleanups. Fixed production bugs, shipped features across the front end, back end and database, and reviewed Solidity contracts.</p></article>
-<article><div class="item-heading"><h3>Founder &amp; Lead Developer · <a href="https://beregen.xyz">BeRegen</a></h3><span class="meta">2023–present</span></div><p>Built RegenFlix, a learning platform with Stripe payments, and developed early versions of RegenImpactHub for identity and impact verification and the BeRegen app for tracking daily practices.</p></article>
-<article><div class="item-heading"><h3>Owner, Brincando em Família Ateliê</h3><span class="meta">2019–present</span></div><p>Manage the online store, website and digital marketing.</p></article>
+<article><div class="item-heading"><h3>Freelance Full-Stack Developer · <a href="https://dapp.decleanup.net">DeCleanup Network</a></h3><span class="meta">Dec 2025–present</span></div><ul class="contributions"><li><strong>Celo testnet MVP stabilization.</strong> Consolidated reward logic, adjusted contract permissions, and fixed build issues. <a href="https://github.com/DeCleanup-Network/decleanup-main-celo/pull/21">PR #21</a></li><li><strong>Hypercert publishing via AT Protocol.</strong> Implemented reuse of published records and stored publishing errors in Supabase. <a href="https://github.com/DeCleanup-Network/decleanup-main-celo/pull/50">PR #50</a></li></ul></article>
+<article><div class="item-heading"><h3>Founder &amp; Lead Developer · <a href="https://beregen.xyz">BeRegen</a></h3><span class="meta">2023–present</span></div><p><strong>RegenFlix.</strong> Built a learning platform with Stripe payments and developed early versions of RegenImpactHub and the BeRegen app.</p></article>
 </section>
-<section><h2>Selected projects</h2>
-<article><div class="item-heading"><h3><a href="https://chronoflare.vercel.app/">ChronoFlare</a></h3></div><p>Interactive calendar for comparing satellite-detected fire activity in the Pantanal. Shows the source, gaps and uncertainty of MODIS and VIIRS observations. Built for NASA Space Apps with TypeScript and Python.</p></article>
-<article><div class="item-heading"><h3><a href="https://matrix-operator.netlify.app/">Operator</a></h3></div><p>Keyboard-first project workspace with local storage and optional cloud sync using React, TypeScript and Supabase.</p></article>
+<section><h2>Technical skills</h2>
+<p><strong>Web applications:</strong> React, Next.js, TypeScript, Node.js, JavaScript, REST APIs, Git. <strong>Databases:</strong> PostgreSQL, Supabase (Auth and RLS).</p>
+<p><strong>Integrations and other languages:</strong> Python for data and automation, n8n, Stripe API, Solidity/EVM, Kotlin, Rust.</p>
+</section>
+<section class="project-page"><h2>Selected projects</h2>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/rastro">Rastro</a></h3></div><p>React PWA that records regenerative activities offline, syncs records when connectivity returns, and collects signed witness attestations via Nostr.</p></article>
+<article><div class="item-heading"><h3><a href="https://matrix-operator.netlify.app/">Operator</a></h3></div><p>Keyboard-first project workspace built with React and TypeScript, with local storage. I implemented a persistent queue that keeps offline edits and sends them to Supabase when the connection returns if sync is enabled.</p></article>
+<article><div class="item-heading"><h3><a href="https://github.com/j-c-fstk-dev/clipvault">ClipVault</a></h3></div><p>Linux clipboard manager built with Rust, Tauri, and React. Captures X11 clipboard events and stores a persistent history in SQLite.</p></article>
+<article><div class="item-heading"><h3><a href="https://chronoflare.vercel.app/">ChronoFlare</a></h3></div><p>Project for the NASA Space Apps Challenge. I built a TypeScript and Python calendar to compare satellite-detected fire activity in the Pantanal using NASA FIRMS data (MODIS and VIIRS), with sources, gaps, and uncertainty shown.</p></article>
 </section>
 <section><h2>Earlier technical experience</h2>
 <article><div class="item-heading"><h3>Engineering Assistant · Zodiac</h3><span class="meta">2010–2014</span></div><p>Built systems for cost tracking and maintenance work orders, and documented processes.</p></article>
@@ -87,6 +91,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 <section><h2>Education and languages</h2>
 <p>B.Sc. in Production Engineering, FUNVIC (2015) · Solidity Developer Bootcamp, DIO × Binance (2025)</p>
 <p>Portuguese (native) · English (advanced)</p>
+</section>
+<section><h2>Business experience</h2>
+<article><div class="item-heading"><h3>Owner, Brincando em Família Ateliê</h3><span class="meta">2019–present</span></div><p>Online store, website, and digital marketing management. Handcrafting of all wooden toys and furniture.</p></article>
 </section>
 </main>
 </body>
