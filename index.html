@@ -101,6 +101,8 @@ input{min-width:0;flex:1;background:transparent;border:0;color:var(--mint);paddi
 input::placeholder{color:var(--dim)}
 form button{padding:.25em .55em}
 .reply{margin-top:.5em;color:#e2ffeb}
+.share-feedback{margin:0;color:#e2ffeb;font-size:.86em}
+.share-feedback:not(:empty){margin-top:.35em;padding:.26em .42em;border-inline-start:2px solid var(--mint);background:#182d23}
 .actions{display:flex;gap:.35em;flex-wrap:wrap;margin:.55em 0}
 .action{padding:.42em .55em;font-size:.86em}
 .lang{display:flex;align-items:center;gap:.45em;margin:.5em 0;color:var(--dim);font-size:.85em}
@@ -168,6 +170,7 @@ body{--header-height:52px;--footer-height:34px}
     <section class="crt" data-label="terminalLabel" aria-label="Terminal de currículos">
       <div class="bar"><span data-copy="portfolio">PORTFÓLIO / CV</span><span class="online" id="status"></span></div>
       <div class="chat" id="chat"></div>
+      <p class="share-feedback" id="share-feedback" role="status"></p>
       <p id="command-hint" class="command-hint" data-copy="hint" hidden></p>
       <form id="prompt" hidden>
         <label for="command" data-label="inputLabel" aria-label="Digite uma opção">❯</label>
@@ -255,7 +258,7 @@ const pt = {
   switchMobile: '4 Trocar currículo', backMobile: '5 Voltar',
   actionHelpMobile: '1 — visualizar\n2 — baixar\n3 — compartilhar\n4 — trocar de currículo\n5 — voltar',
   opening: 'Abrindo currículo…', returning: 'Carregando menu…',
-  invalid: 'Comando inválido. Digite help.', copied: 'Link copiado.',
+  invalid: 'Comando inválido. Digite help.', copied: 'Link do currículo copiado para a área de transferência.',
   manualShare: 'Copie o link selecionado para compartilhar.',
   alt: 'Monitor bege, teclado, mouse e caixas de som retrô sobre uma mesa na Lua, com a Terra ao fundo'
 };
@@ -280,7 +283,7 @@ const en = {
   switchMobile: '4 Switch résumé', backMobile: '5 Back',
   actionHelpMobile: '1 — view\n2 — download\n3 — share\n4 — switch résumé\n5 — back',
   opening: 'Opening résumé…', returning: 'Loading menu…',
-  invalid: 'Unknown command. Type help.', copied: 'Link copied.',
+  invalid: 'Unknown command. Type help.', copied: 'Résumé link copied to clipboard.',
   manualShare: 'Copy the selected link to share it.',
   alt: 'Beige monitor, keyboard, mouse and retro speakers on a desk on the Moon, with Earth in the background'
 };
@@ -298,6 +301,7 @@ const copy = isPortuguese ? pt : en;
 const categories = ['Dev_Freelance', 'Dev_Empresas', 'Tradutor'];
 const emails = ['dev.jorge.c@gmail.com', 'dev.jorge.c@gmail.com', 'cristtranslations@gmail.com'];
 const chat = document.querySelector('#chat');
+const shareFeedback = document.querySelector('#share-feedback');
 const form = document.querySelector('#prompt');
 const command = document.querySelector('#command');
 const hint = document.querySelector('#command-hint');
@@ -422,6 +426,7 @@ function markOnline() {
 }
 
 function setLanguage(language) {
+  shareFeedback.textContent = '';
   resumeLanguage = language;
   const name = 'Jorge_Cristo_' + categories[selection] + '_' + language + '.html';
   documentPath = './curriculos/' + name;
@@ -438,6 +443,7 @@ function replyOnce(message, line = chat.querySelector('.reply')) {
 }
 
 async function transition(message, duration = 1000) {
+  shareFeedback.textContent = '';
   transitioning = true;
   command.value = '';
   if (touch.matches) command.blur();
@@ -522,13 +528,18 @@ async function backToMenu(offerContact = true) {
 async function share() {
   if (sharing) return;
   sharing = true;
+  shareFeedback.textContent = '';
   const line = chat.querySelector('.reply');
+  const language = resumeLanguage;
+  const confirmCopy = () => {
+    if (line.isConnected && language === resumeLanguage) shareFeedback.textContent = copy.copied;
+  };
   const link = new URL(location.pathname, location.origin);
   link.searchParams.set('v', variants[selection]);
   link.searchParams.set('lang', resumeLanguage.toLowerCase());
   const url = link.href;
   try {
-    if (navigator.share) {
+    if (touch.matches && navigator.share) {
       try {
         await navigator.share({title: copy.choices[selection] + ' — Jorge Cristo', url});
         thank(copy.thanks, line);
@@ -539,13 +550,17 @@ async function share() {
     }
     try {
       await navigator.clipboard.writeText(url);
-      thank(copy.copied + ' ' + copy.thanks, line);
+      confirmCopy();
+      thank(copy.thanks, line);
     } catch {
       if (!line.isConnected) return;
       shareUrl.value = url;
       shareDialog.showModal();
       shareUrl.select();
-      shareUrl.addEventListener('copy', () => thank(copy.thanks, line), {
+      shareUrl.addEventListener('copy', () => {
+        confirmCopy();
+        thank(copy.thanks, line);
+      }, {
         once: true, signal: shareSession.signal
       });
     }
