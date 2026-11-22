@@ -1,0 +1,476 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 2 /Kids [16 0 R 22 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Annot /Subtype /Link /Rect [136.45 750.5 250.17 763] /Border [0 0 0] /A << /S /URI /URI (mailto:dev.jorge.c@gmail.com) >> >>
+endobj
+6 0 obj
+<< /Type /Annot /Subtype /Link /Rect [262.35 750.5 392.13 763] /Border [0 0 0] /A << /S /URI /URI (https://github.com/j-c-fstk-dev) >> >>
+endobj
+7 0 obj
+<< /Type /Annot /Subtype /Link /Rect [404.31 750.5 540.81 763] /Border [0 0 0] /A << /S /URI /URI (https://jcdevportfolio.netlify.app/) >> >>
+endobj
+8 0 obj
+<< /Type /Annot /Subtype /Link /Rect [261.68 624 321.30 637] /Border [0 0 0] /A << /S /URI /URI (https://dapp.decleanup.net) >> >>
+endobj
+9 0 obj
+<< /Type /Annot /Subtype /Link /Rect [321.30 624 366.29 637] /Border [0 0 0] /A << /S /URI /URI (https://dapp.decleanup.net) >> >>
+endobj
+10 0 obj
+<< /Type /Annot /Subtype /Link /Rect [256.59 578 275.07 590.5] /Border [0 0 0] /A << /S /URI /URI (https://github.com/DeCleanup-Network/decleanup-main-celo/pull/21) >> >>
+endobj
+11 0 obj
+<< /Type /Annot /Subtype /Link /Rect [275.07 578 292.71 590.5] /Border [0 0 0] /A << /S /URI /URI (https://github.com/DeCleanup-Network/decleanup-main-celo/pull/21) >> >>
+endobj
+12 0 obj
+<< /Type /Annot /Subtype /Link /Rect [311.30 548 329.78 560.5] /Border [0 0 0] /A << /S /URI /URI (https://github.com/DeCleanup-Network/decleanup-main-celo/pull/50) >> >>
+endobj
+13 0 obj
+<< /Type /Annot /Subtype /Link /Rect [329.78 548 347.42 560.5] /Border [0 0 0] /A << /S /URI /URI (https://github.com/DeCleanup-Network/decleanup-main-celo/pull/50) >> >>
+endobj
+14 0 obj
+<< /Type /Annot /Subtype /Link /Rect [228.13 532.5 274.99 545.5] /Border [0 0 0] /A << /S /URI /URI (https://beregen.xyz) >> >>
+endobj
+15 0 obj
+<< /Length 12708 >>
+stream
+BT /F2 27 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 800.00 Tm (Jorge ) Tj ET
+BT /F2 27 Tf 0.08 0.31 0.26 rg 1 0 0 1 131.29 800.00 Tm (Cristo) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 768.00 Tm (Desenvolvedor ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 121.65 768.00 Tm (Full-Stack) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 752.50 Tm (Brasil ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 77.75 752.50 Tm (\(UTC-3\)) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 127.42 752.50 Tm (\267 ) Tj ET
+BT /F1 10.5 Tf 0.08 0.31 0.26 rg 1 0 0 1 136.45 752.50 Tm (dev.jorge.c@gmail.com) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 253.32 752.50 Tm (\267 ) Tj ET
+BT /F1 10.5 Tf 0.08 0.31 0.26 rg 1 0 0 1 262.35 752.50 Tm (github.com/j-c-fstk-dev) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 395.28 752.50 Tm (\267 ) Tj ET
+BT /F1 10.5 Tf 0.08 0.31 0.26 rg 1 0 0 1 404.31 752.50 Tm (jcdevportfolio.netlify.app) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 729.00 Tm (Perfil) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 711.00 Tm (Desenvolvedor ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 121.65 711.00 Tm (full-stack ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 178.14 711.00 Tm (com ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 198.93 711.00 Tm (forma\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 249.12 711.00 Tm (em ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 264.03 711.00 Tm (Engenharia ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 325.03 711.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 339.94 711.00 Tm (Produ\347\343o. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 395.07 711.00 Tm (Trabalho ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 444.31 711.00 Tm (com ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 465.10 711.00 Tm (aplica\347\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 521.59 711.00 Tm (web ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 696.50 Tm (que ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 63.79 696.50 Tm (funcionam ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 117.13 696.50 Tm (offline, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 159.13 696.50 Tm (sincroniza\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 233.26 696.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 248.17 696.50 Tm (dados ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 280.72 696.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 289.75 696.50 Tm (integra\347\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 354.85 696.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 369.76 696.50 Tm (pagamento. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 428.98 696.50 Tm (Minha ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 462.69 696.50 Tm (experi\352ncia ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 682.00 Tm (inclui ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 73.24 682.00 Tm (estabilizar ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 132.88 682.00 Tm (aplica\347\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 189.37 682.00 Tm (existentes, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 251.74 682.00 Tm (desenvolver ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 316.84 682.00 Tm (produtos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 367.03 682.00 Tm (com ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 387.82 682.00 Tm (React ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 422.16 682.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 431.19 682.00 Tm (TypeScript ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 493.98 682.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 503.00 682.00 Tm (criar ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 667.50 Tm (ferramentas ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 110.83 667.50 Tm (desktop ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 155.14 667.50 Tm (em ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 170.05 667.50 Tm (Rust.) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 644.00 Tm (Experi\352ncia) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 626.00 Tm (Desenvolvedor ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 125.39 626.00 Tm (Full-Stack ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 188.31 626.00 Tm (Freelancer ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 252.22 626.00 Tm (\267 ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 261.68 626.00 Tm (DeCleanup ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 321.30 626.00 Tm (Network) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 610.00 Tm (dez. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 66.94 610.00 Tm (2025\226atual) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 51.00 594.50 Tm (Estabiliza\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 124.19 594.50 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 139.10 594.50 Tm (MVP ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 167.34 594.50 Tm (na ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 182.25 594.50 Tm (testnet ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 226.56 594.50 Tm (Celo.) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 255.44 594.50 Tm (Consolidei ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 310.98 594.50 Tm (a ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 320.01 594.50 Tm (l\363gica ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 352.98 594.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 367.89 594.50 Tm (recompensas, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 438.87 594.50 Tm (ajustei ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 480.45 594.50 Tm (permiss\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 51.00 580.00 Tm (dos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 71.79 580.00 Tm (contratos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 127.86 580.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 136.89 580.00 Tm (corrigi ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 175.74 580.00 Tm (falhas ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 211.44 580.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 226.35 580.00 Tm (build. ) Tj ET
+BT /F1 10.5 Tf 0.08 0.31 0.26 rg 1 0 0 1 256.59 580.00 Tm (PR ) Tj ET
+BT /F1 10.5 Tf 0.08 0.31 0.26 rg 1 0 0 1 275.07 580.00 Tm (#21) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 51.00 564.50 Tm (Publica\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 109.28 564.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 124.19 564.50 Tm (Hypercerts ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 187.92 564.50 Tm (via ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 205.98 564.50 Tm (AT ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 224.46 564.50 Tm (Protocol.) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 276.85 564.50 Tm (Implementei ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 336.49 564.50 Tm (o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 345.52 564.50 Tm (reaproveitamento ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 440.03 564.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 454.94 564.50 Tm (registros ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 508.28 564.50 Tm (j\341 ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 51.00 550.00 Tm (publicados ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 107.49 550.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 116.52 550.00 Tm (a ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 125.55 550.00 Tm (persist\352ncia ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 193.80 550.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 208.71 550.00 Tm (erros ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 241.26 550.00 Tm (no ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 256.17 550.00 Tm (Supabase. ) Tj ET
+BT /F1 10.5 Tf 0.08 0.31 0.26 rg 1 0 0 1 311.30 550.00 Tm (PR ) Tj ET
+BT /F1 10.5 Tf 0.08 0.31 0.26 rg 1 0 0 1 329.78 550.00 Tm (#50) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 534.50 Tm (Fundador ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 97.45 534.50 Tm (e ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 106.91 534.50 Tm (desenvolvedor ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 187.43 534.50 Tm (l\355der ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 218.67 534.50 Tm (\267 ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 228.13 534.50 Tm (BeRegen) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 518.50 Tm (2023\226atual) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 503.00 Tm (RegenFlix.) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 100.33 503.00 Tm (Desenvolvi ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 158.60 503.00 Tm (uma ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 179.39 503.00 Tm (plataforma ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 238.62 503.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 253.53 503.00 Tm (ensino ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 289.23 503.00 Tm (com ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 310.02 503.00 Tm (pagamentos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 371.97 503.00 Tm (via ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 390.03 503.00 Tm (Stripe. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 430.66 503.00 Tm (Tamb\351m ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 470.88 503.00 Tm (implementei ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 530.51 503.00 Tm (as ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 488.50 Tm (primeiras ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 93.61 488.50 Tm (vers\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 137.92 488.50 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 152.83 488.50 Tm (RegenImpactHub ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 239.14 488.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 248.17 488.50 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 263.08 488.50 Tm (app ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 283.87 488.50 Tm (BeRegen.) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 465.00 Tm (Compet\352ncias ) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 133.09 465.00 Tm (t\351cnicas) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 447.00 Tm (Aplica\347\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 101.28 447.00 Tm (web:) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 125.22 447.00 Tm (React, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 162.70 447.00 Tm (Next.js, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 209.22 447.00 Tm (TypeScript, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 275.16 447.00 Tm (Node.js, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 321.67 447.00 Tm (JavaScript, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 387.61 447.00 Tm (APIs ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 415.12 447.00 Tm (REST, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 452.08 447.00 Tm (Git. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 475.07 447.00 Tm (Bancos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 515.29 447.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 432.50 Tm (dados:) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 78.70 432.50 Tm (PostgreSQL, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 150.94 432.50 Tm (Supabase ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 202.92 432.50 Tm (\(Auth ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 237.25 432.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 246.28 432.50 Tm (RLS\).) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 417.00 Tm (Integra\347\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 108.10 417.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 117.13 417.00 Tm (outras ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 155.56 417.00 Tm (linguagens:) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 215.20 417.00 Tm (Python ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 255.42 417.00 Tm (para ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 282.09 417.00 Tm (dados ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 314.64 417.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 323.67 417.00 Tm (automa\347\343o, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 382.89 417.00 Tm (n8n, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 406.83 417.00 Tm (API ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 428.46 417.00 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 443.37 417.00 Tm (Stripe, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 402.50 Tm (Solidity/EVM, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 120.91 402.50 Tm (Kotlin, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 158.81 402.50 Tm (Rust.) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R /Annots [5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R] >>
+endobj
+17 0 obj
+<< /Type /Annot /Subtype /Link /Rect [43.00 772 81.83 785] /Border [0 0 0] /A << /S /URI /URI (https://github.com/j-c-fstk-dev/rastro) >> >>
+endobj
+18 0 obj
+<< /Type /Annot /Subtype /Link /Rect [43.00 726 94.15 739] /Border [0 0 0] /A << /S /URI /URI (https://matrix-operator.netlify.app/) >> >>
+endobj
+19 0 obj
+<< /Type /Annot /Subtype /Link /Rect [43.00 665.5 93.60 678.5] /Border [0 0 0] /A << /S /URI /URI (https://github.com/j-c-fstk-dev/clipvault) >> >>
+endobj
+20 0 obj
+<< /Type /Annot /Subtype /Link /Rect [43.00 619.5 111.64 632.5] /Border [0 0 0] /A << /S /URI /URI (https://chronoflare.vercel.app/) >> >>
+endobj
+21 0 obj
+<< /Length 15140 >>
+stream
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 792.00 Tm (Projetos ) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 107.35 792.00 Tm (selecionados) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 774.00 Tm (Rastro) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 758.00 Tm (PWA ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 71.25 758.00 Tm (em ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 86.16 758.00 Tm (React ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 120.49 758.00 Tm (que ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 141.28 758.00 Tm (registra ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 188.74 758.00 Tm (a\347\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 221.29 758.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 236.20 758.00 Tm (regenera\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 304.03 758.00 Tm (sem ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 324.82 758.00 Tm (conex\343o, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 372.28 758.00 Tm (sincroniza ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 428.77 758.00 Tm (os ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 443.68 758.00 Tm (registros ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 497.02 758.00 Tm (quando ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 535.45 758.00 Tm (a ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 743.50 Tm (rede ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 69.67 743.50 Tm (volta ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 99.49 743.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 108.52 743.50 Tm (coleta ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 144.22 743.50 Tm (confirma\347\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 215.20 743.50 Tm (assinadas ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 268.54 743.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 283.45 743.50 Tm (testemunhas ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 351.28 743.50 Tm (via ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 369.34 743.50 Tm (Nostr.) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 728.00 Tm (Operator) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 712.00 Tm (Aplica\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 95.40 712.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 110.31 712.00 Tm (gest\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 148.74 712.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 163.65 712.00 Tm (projetos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 213.84 712.00 Tm (em ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 228.75 712.00 Tm (React ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 263.08 712.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 272.11 712.00 Tm (TypeScript, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 338.05 712.00 Tm (com ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 358.84 712.00 Tm (navega\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 414.91 712.00 Tm (por ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 435.70 712.00 Tm (teclado ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 477.28 712.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 697.50 Tm (armazenamento ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 122.59 697.50 Tm (local. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 152.83 697.50 Tm (Implementei ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 212.47 697.50 Tm (uma ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 233.26 697.50 Tm (fila ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 254.47 697.50 Tm (persistente ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 319.57 697.50 Tm (que ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 340.36 697.50 Tm (guarda ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 378.79 697.50 Tm (altera\347\365es ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 438.01 697.50 Tm (offline ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 476.86 697.50 Tm (e, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 489.04 697.50 Tm (quando ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 527.47 697.50 Tm (a ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 683.00 Tm (sincroniza\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 117.13 683.00 Tm (est\341 ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 143.80 683.00 Tm (ativa, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 176.77 683.00 Tm (envia ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 206.59 683.00 Tm (as ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 221.50 683.00 Tm (mudan\347as ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 271.69 683.00 Tm (ao ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 286.60 683.00 Tm (Supabase ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 338.58 683.00 Tm (assim ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 368.40 683.00 Tm (que ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 389.19 683.00 Tm (a ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 398.22 683.00 Tm (conex\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 442.53 683.00 Tm (volta.) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 667.50 Tm (ClipVault) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 651.50 Tm (Gerenciador ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 109.89 651.50 Tm (da ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 124.80 651.50 Tm (\341rea ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 151.47 651.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 166.38 651.50 Tm (transfer\352ncia ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 243.24 651.50 Tm (para ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 269.91 651.50 Tm (Linux ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 301.51 651.50 Tm (em ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 316.42 651.50 Tm (Rust, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 348.03 651.50 Tm (Tauri ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 379.63 651.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 388.66 651.50 Tm (React. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 426.15 651.50 Tm (Captura ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 472.24 651.50 Tm (eventos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 516.55 651.50 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 637.00 Tm (X11 ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 65.58 637.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 74.61 637.00 Tm (mant\351m ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 113.03 637.00 Tm (o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 122.06 637.00 Tm (hist\363rico ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 172.67 637.00 Tm (em ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 187.58 637.00 Tm (SQLite.) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 621.50 Tm (ChronoFlare) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 605.50 Tm (Projeto ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 89.09 605.50 Tm (para ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 115.77 605.50 Tm (o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 124.80 605.50 Tm (NASA ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 158.60 605.50 Tm (Space ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 192.94 605.50 Tm (Apps ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 221.39 605.50 Tm (Challenge. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 276.94 605.50 Tm (Desenvolvi ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 335.21 605.50 Tm (um ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 350.12 605.50 Tm (calend\341rio ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 406.61 605.50 Tm (em ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 421.52 605.50 Tm (TypeScript ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 484.31 605.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 493.34 605.50 Tm (Python ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 591.00 Tm (para ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 69.67 591.00 Tm (comparar ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 119.86 591.00 Tm (focos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 152.41 591.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 167.32 591.00 Tm (calor ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 197.14 591.00 Tm (no ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 212.05 591.00 Tm (Pantanal ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 261.30 591.00 Tm (com ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 282.09 591.00 Tm (dados ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 314.64 591.00 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 329.55 591.00 Tm (NASA ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 363.36 591.00 Tm (FIRMS ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 402.42 591.00 Tm (\(MODIS ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 447.36 591.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 456.39 591.00 Tm (VIIRS\), ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 576.50 Tm (mostrando ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 99.07 576.50 Tm (origem, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 137.92 576.50 Tm (lacunas ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 179.50 576.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 188.53 576.50 Tm (incertezas.) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 553.00 Tm (Experi\352ncia ) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 122.43 553.00 Tm (t\351cnica ) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 173.91 553.00 Tm (anterior) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 535.00 Tm (Assistente ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 106.91 535.00 Tm (de ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 122.53 535.00 Tm (engenharia ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 184.57 535.00 Tm (\267 ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 194.03 535.00 Tm (Zodiac) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 519.00 Tm (2010\2262014) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 503.50 Tm (Criei ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 71.88 503.50 Tm (sistemas ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 119.34 503.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 134.25 503.50 Tm (controle ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 181.71 503.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 196.62 503.50 Tm (custos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 235.05 503.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 244.08 503.50 Tm (ordens ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 282.50 503.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 297.42 503.50 Tm (manuten\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 359.37 503.50 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 368.39 503.50 Tm (documentei ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 427.62 503.50 Tm (processos.) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 480.00 Tm (Forma\347\343o ) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 107.35 480.00 Tm (e ) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 118.53 480.00 Tm (idiomas) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 462.00 Tm (Engenharia ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 104.00 462.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 118.91 462.00 Tm (Produ\347\343o, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 174.04 462.00 Tm (FUNVIC ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 218.66 462.00 Tm (\(2015\) ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 257.09 462.00 Tm (\267 ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 266.13 462.00 Tm (Bootcamp ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 318.10 462.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 333.01 462.00 Tm (Desenvolvimento ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 420.69 462.00 Tm (Blockchain ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 478.96 462.00 Tm (com ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 499.75 462.00 Tm (Solidity, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 447.50 Tm (DIO ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 64.63 447.50 Tm (\327 ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 75.44 447.50 Tm (Binance ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 118.81 447.50 Tm (\(2025\)) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 432.00 Tm (Portugu\352s ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 100.86 432.00 Tm (\(nativo\) ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 148.31 432.00 Tm (\267 ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 157.34 432.00 Tm (Ingl\352s ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 190.31 432.00 Tm (\(avan\347ado\)) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 408.50 Tm (Experi\352ncia ) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 122.43 408.50 Tm (em ) Tj ET
+BT /F2 13 Tf 0.08 0.31 0.26 rg 1 0 0 1 140.89 408.50 Tm (neg\363cios) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 43.00 390.50 Tm (Propriet\341rio ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 116.37 390.50 Tm (do ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 131.99 390.50 Tm (Brincando ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 189.74 390.50 Tm (em ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 205.36 390.50 Tm (Fam\355lia ) Tj ET
+BT /F2 11 Tf 0.08 0.31 0.26 rg 1 0 0 1 247.93 390.50 Tm (Ateli\352) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 374.50 Tm (2019\226atual) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 359.00 Tm (Gest\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 83.22 359.00 Tm (da ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 98.13 359.00 Tm (loja ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 122.06 359.00 Tm (virtual, ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 164.06 359.00 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 178.97 359.00 Tm (site ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 202.91 359.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 211.94 359.00 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 226.85 359.00 Tm (marketing ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 280.19 359.00 Tm (digital. ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 319.46 359.00 Tm (Fabrica\347\343o ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 380.47 359.00 Tm (manual ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 416.17 359.00 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 431.08 359.00 Tm (todos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 463.63 359.00 Tm (os ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 478.54 359.00 Tm (brinquedos ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 537.76 359.00 Tm (e ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 43.00 344.50 Tm (m\363veis ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 78.70 344.50 Tm (de ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 93.61 344.50 Tm (madeira ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 135.19 344.50 Tm (do ) Tj ET
+BT /F1 10.5 Tf 0.12 0.17 0.16 rg 1 0 0 1 150.10 344.50 Tm (ateli\352.) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 21 0 R /Annots [17 0 R 18 0 R 19 0 R 20 0 R] >>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000123 00000 n 
+0000000220 00000 n 
+0000000322 00000 n 
+0000000472 00000 n 
+0000000625 00000 n 
+0000000782 00000 n 
+0000000928 00000 n 
+0000001074 00000 n 
+0000001261 00000 n 
+0000001448 00000 n 
+0000001635 00000 n 
+0000001822 00000 n 
+0000001966 00000 n 
+0000014727 00000 n 
+0000014940 00000 n 
+0000015097 00000 n 
+0000015252 00000 n 
+0000015416 00000 n 
+0000015571 00000 n 
+0000030764 00000 n 
+trailer
+<< /Size 23 /Root 1 0 R >>
+startxref
+30940
+%%EOF

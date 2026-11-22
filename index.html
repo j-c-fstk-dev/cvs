@@ -431,8 +431,9 @@ function setLanguage(language) {
   const name = 'Jorge_Cristo_' + categories[selection] + '_' + language + '.html';
   documentPath = './curriculos/' + name;
   const download = document.querySelector('#download');
-  download.href = documentPath;
-  download.download = name;
+  const pdfName = name.replace(/\.html$/, '.pdf');
+  download.href = './curriculos/' + pdfName;
+  download.download = pdfName;
   chat.querySelectorAll('[data-lang]').forEach(button => {
     button.setAttribute('aria-pressed', button.dataset.lang === language);
   });
