@@ -194,6 +194,7 @@ body{--header-height:52px;--footer-height:34px}
   <li>Freelance Full-Stack Developer · <a lang="en" href="./curriculos/Jorge_Cristo_Dev_Freelance_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Dev_Freelance_PT.html">Português</a></li>
   <li>Full-Stack Developer · <a lang="en" href="./curriculos/Jorge_Cristo_Dev_Empresas_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Dev_Empresas_PT.html">Português</a></li>
   <li>English to Brazilian Portuguese Translator · <a lang="en" href="./curriculos/Jorge_Cristo_Tradutor_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Tradutor_PT.html">Português</a></li>
+  <li>Mobile App QA Tester · <a lang="en" href="./curriculos/Jorge_Cristo_Mobile_QA_Tester_EN.html">English</a></li>
   </ul>
 </section>
 </details>
@@ -220,6 +221,7 @@ body{--header-height:52px;--footer-height:34px}
     <button class="option" type="button" data-choice="1"><kbd>01</kbd><span class="option-copy"><strong></strong><small></small></span><span aria-hidden="true">›</span></button>
     <button class="option" type="button" data-choice="2"><kbd>02</kbd><span class="option-copy"><strong></strong><small></small></span><span aria-hidden="true">›</span></button>
     <button class="option" type="button" data-choice="3"><kbd>03</kbd><span class="option-copy"><strong></strong><small></small></span><span aria-hidden="true">›</span></button>
+    <button class="option" type="button" data-choice="4"><kbd>04</kbd><span class="option-copy"><strong></strong><small></small></span><span aria-hidden="true">›</span></button>
   </div>
   <div class="contact" hidden><p></p><a class="action" data-copy="email" hidden>Enviar e-mail</a></div>
   <p class="reply" role="status" hidden></p>
@@ -249,13 +251,13 @@ const pt = {
   share: 'Compartilhar link', back: 'Voltar', email: 'Enviar e-mail',
   connect: 'Conectando ao servidor lunar…', connected: 'Conexão estabelecida.', loading: 'Carregando currículos…',
   intro: ['Oi, sou o Jorge.', 'Estabilizo aplicações, entrego funcionalidades e crio ferramentas Web3.', 'Escolha o currículo certo para você:'],
-  choices: ['Freelance', 'Empresas', 'Tradução'],
-  descriptions: ['Correções · integrações · Web3 · automação', 'Full-stack · produto · estabilização', 'EN → PT-BR · conteúdo digital e técnico'],
+  choices: ['Freelance', 'Empresas', 'Tradução', 'QA Mobile'],
+  descriptions: ['Correções · integrações · Web3 · automação', 'Full-stack · produto · estabilização', 'EN → PT-BR · conteúdo digital e técnico', 'Testes Android · reprodução de bugs · CV em inglês'],
   thanks: 'Obrigado pela visita!', contact: 'Quer entrar em contato? É só clicar abaixo para me enviar um e-mail.',
   hint: 'Digite help para ver os comandos',
   actionOpen: '1 Visualizar', actionDownload: '2 Baixar', previewDownload: 'Baixar PDF', actionShare: '3 Compartilhar',
-  menuPrompt: 'Digite 1, 2, 3 ou help', actionPrompt: 'Digite um comando',
-  menuHelp: '1, 2, 3 — escolher currículo',
+  menuPrompt: 'Digite 1 a 4 ou help', actionPrompt: 'Digite um comando',
+  menuHelp: '1–4 — escolher currículo',
   actionHelp: '1 — visualizar\n2 — baixar\n3 — compartilhar\nEsc — voltar · Tab — trocar de currículo',
   switchMobile: '4 Trocar currículo', backMobile: '5 Voltar',
   actionHelpMobile: '1 — visualizar\n2 — baixar\n3 — compartilhar\n4 — trocar de currículo\n5 — voltar',
@@ -274,13 +276,13 @@ const en = {
   share: 'Share link', back: 'Back', email: 'Send email',
   connect: 'Connecting to the lunar server…', connected: 'Connection established.', loading: 'Loading résumés…',
   intro: ['Hi, Jorge here.', 'I stabilize apps, ship features and build Web3 tools.', 'Choose the résumé that fits:'],
-  choices: ['Freelance', 'Companies', 'Translation'],
-  descriptions: ['Bug fixes · integrations · Web3 · automation', 'Full-stack · product · stabilization', 'EN → PT-BR · digital and technical content'],
+  choices: ['Freelance', 'Companies', 'Translation', 'Mobile QA'],
+  descriptions: ['Bug fixes · integrations · Web3 · automation', 'Full-stack · product · stabilization', 'EN → PT-BR · digital and technical content', 'Android testing · bug reproduction'],
   thanks: 'Thanks for stopping by!', contact: 'Want to get in touch? Click below to send me an email.',
   hint: 'Type help to see commands',
   actionOpen: '1 View', actionDownload: '2 Download', previewDownload: 'Download PDF', actionShare: '3 Share',
-  menuPrompt: 'Type 1, 2, 3, or help', actionPrompt: 'Type a command',
-  menuHelp: '1, 2, 3 — choose a résumé',
+  menuPrompt: 'Type 1–4, or help', actionPrompt: 'Type a command',
+  menuHelp: '1–4 — choose a résumé',
   actionHelp: '1 — view\n2 — download\n3 — share\nEsc — back · Tab — switch résumé',
   switchMobile: '4 Switch résumé', backMobile: '5 Back',
   actionHelpMobile: '1 — view\n2 — download\n3 — share\n4 — switch résumé\n5 — back',
@@ -292,7 +294,7 @@ const en = {
 const languages = navigator.languages?.length ? navigator.languages : [navigator.language || ''];
 const preferred = languages.map(language => language.toLowerCase().split('-')[0])
   .find(language => language === 'pt' || language === 'en');
-const variants = ['freelance', 'companies', 'translation'];
+const variants = ['freelance', 'companies', 'translation', 'mobile-qa'];
 const query = new URLSearchParams(location.search);
 const initialSelection = variants.indexOf(query.get('v'));
 const requestedLanguage = query.get('lang');
@@ -300,8 +302,8 @@ const initialLanguage = initialSelection >= 0 && ['pt', 'en'].includes(requested
   ? requestedLanguage : preferred;
 const isPortuguese = initialLanguage === 'pt';
 const copy = isPortuguese ? pt : en;
-const categories = ['Dev_Freelance', 'Dev_Empresas', 'Tradutor'];
-const emails = ['dev.jorge.c@gmail.com', 'dev.jorge.c@gmail.com', 'cristtranslations@gmail.com'];
+const categories = ['Dev_Freelance', 'Dev_Empresas', 'Tradutor', 'Mobile_QA_Tester'];
+const emails = ['dev.jorge.c@gmail.com', 'dev.jorge.c@gmail.com', 'cristtranslations@gmail.com', 'dev.jorge.c@gmail.com'];
 const chat = document.querySelector('#chat');
 const shareFeedback = document.querySelector('#share-feedback');
 const form = document.querySelector('#prompt');
@@ -475,18 +477,20 @@ function showResult(index) {
     chat.querySelector('#switch-cv').hidden = false;
     chat.querySelector('#back').textContent = copy.backMobile;
   }
-  setLanguage(isPortuguese ? 'PT' : 'EN');
+  const englishOnly = variants[selection] === 'mobile-qa';
+  chat.querySelector('[data-lang=PT]').hidden = englishOnly;
+  setLanguage(!englishOnly && isPortuguese ? 'PT' : 'EN');
 }
 
 function runCommand(value) {
   if (transitioning || form.hidden) return;
   command.value = '';
-  if (/^[123]$/.test(value)) {
-    if (selection === undefined) {
-      void choose(value);
-    } else {
-      chat.querySelector(['#open', '#download', '#share'][Number(value) - 1]).click();
-    }
+  if (selection === undefined && /^[1-4]$/.test(value)) {
+    void choose(value);
+    return;
+  }
+  if (selection !== undefined && /^[1-3]$/.test(value)) {
+    chat.querySelector(['#open', '#download', '#share'][Number(value) - 1]).click();
     return;
   }
   if (touch.matches && selection !== undefined && /^[45]$/.test(value)) {
@@ -607,7 +611,7 @@ form.addEventListener('submit', event => {
 document.addEventListener('keydown', event => {
   if (selection === undefined && !form.hidden && !transitioning && !event.defaultPrevented &&
       !event.repeat && !event.ctrlKey && !event.altKey && !event.metaKey && !event.isComposing &&
-      !event.target.closest('input, textarea, select, [contenteditable]') && /^[123]$/.test(event.key)) {
+      !event.target.closest('input, textarea, select, [contenteditable]') && /^[1-4]$/.test(event.key)) {
     event.preventDefault();
     runCommand(event.key);
     return;
@@ -626,7 +630,8 @@ document.addEventListener('keydown', event => {
 command.addEventListener('keydown', event => {
   if (event.repeat || event.isComposing || event.ctrlKey || event.altKey || event.metaKey ||
       command.value || !/^[1-5]$/.test(event.key)) return;
-  if (/^[45]$/.test(event.key) && (!touch.matches || selection === undefined)) return;
+  if (event.key === '5' && (selection === undefined || !touch.matches)) return;
+  if (event.key === '4' && selection !== undefined && !touch.matches) return;
   event.preventDefault();
   runCommand(event.key);
 });

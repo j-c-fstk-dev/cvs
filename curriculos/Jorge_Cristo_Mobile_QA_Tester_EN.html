@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jorge Cristo - Mobile App QA Tester</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mobile app QA tester focused on Android testing, bug reproduction, and bilingual documentation.">
+<link rel="canonical" href="https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Mobile_QA_Tester_EN.html">
+
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.38;
+    color: #222;
+    background: #fff;
+  }
+  .page { width: 210mm; padding: 13mm 16mm 12mm; }
+  .page + .page { page-break-before: always; }
+
+  h1 { font-size: 22pt; margin: 0; color: #1d4f40; letter-spacing: 0.2pt; }
+  .role { font-size: 11pt; font-weight: bold; margin: 2mm 0 1mm; color: #222; }
+  .contact { font-size: 8.8pt; color: #444; }
+  .contact a { color: #1d4f40; text-decoration: none; }
+
+  h2 {
+    font-size: 11pt; color: #1d4f40; margin: 5mm 0 1.6mm;
+    padding-bottom: 0.8mm; border-bottom: 0.4pt solid #b9cfc7;
+    text-transform: uppercase; letter-spacing: 0.6pt;
+  }
+  p { margin: 0 0 1.2mm; }
+  .summary { font-size: 9.6pt; }
+
+  .job { margin-bottom: 3.2mm; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .job-title { font-weight: bold; font-size: 10pt; color: #1d4f40; }
+  .job-meta { font-size: 8.8pt; color: #555; white-space: nowrap; }
+  .job-sub { font-size: 8.8pt; color: #555; font-style: italic; margin-bottom: 0.8mm; }
+  ul { margin: 0; padding-left: 4mm; }
+  li { margin: 0 0 0.9mm; }
+  li b { color: #111; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 6mm; }
+  .skill-row { margin-bottom: 1.2mm; }
+  .skill-row b { color: #1d4f40; }
+
+  .edu-row { display: flex; justify-content: space-between; margin-bottom: 1mm; gap: 4mm; }
+  .edu-row span.r { color: #555; white-space: nowrap; }
+@media screen {
+  body { max-width: 820px; margin: 0 auto; padding: clamp(16px, 4vw, 32px); overflow-wrap: anywhere; }
+  .page { width: auto; padding: 0; }
+  .job-head, .edu-row { flex-wrap: wrap; }
+  .job-meta, .edu-row .r { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <h1>Jorge Cristo</h1>
+  <div class="role">Mobile App QA Tester &middot; Bug Reproduction &middot; Android &middot; Bilingual EN / PT-BR</div>
+  <div class="contact">
+    Brazil (UTC-3) &middot; Remote &middot; dev.jorge.c@gmail.com &middot;
+    <a href="https://github.com/j-c-fstk-dev">github.com/j-c-fstk-dev</a> &middot;
+    <a href="https://jcdevportfolio.netlify.app">jcdevportfolio.netlify.app</a>
+  </div>
+
+  <h2>Profile</h2>
+  <p class="summary">
+    QA-minded developer with three years of freelance client work fixing bugs in existing apps. I reproduce a
+    problem before touching any code, document its cause and steps, deliver the fix on a separate branch, and
+    verify the result before sign-off. Hands-on with a native Android app (Kotlin, Jetpack Compose) that I built
+    and distributed as test builds, offline-first apps that must recover after a lost connection, and payment
+    and wallet flows (Stripe, EVM). Native Brazilian Portuguese; advanced English, spoken and written.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Freelance Full-Stack Developer &middot; Bug Fixing &amp; App Rescue</div>
+      <div class="job-meta">2023 &ndash; present &middot; Remote</div>
+    </div>
+    <div class="job-sub">Web3, climate and community clients; bug fixes, feature delivery and release verification</div>
+    <ul>
+      <li><b>DeCleanup Network</b> (Dec 2025 &ndash; present): recurring contributor to an open-source onchain protocol
+        for verified community cleanups &mdash; 9 merged pull requests and 72 commits on main, 27 of them
+        touching changelogs and documentation.
+        <ul>
+          <li>Built the Hypercerts flow end to end: eligibility rules, request and verifier-approval flow, and
+            user-side minting with IPFS metadata (PRs #30, #32, #37).</li>
+          <li>Reproduced and fixed production build and hydration failures (PRs #33, #38); added defensive
+            validation for a Wagmi chainId bug and per-network rules (PR #36).</li>
+          <li>Improved AI-verification stability with confidence scoring and a manual-review path (PR #29).</li>
+          <li>Published Hypercerts via AT Protocol with Supabase integration, lexicon validation and feature flags
+            (PR #50); delivered Celo + Base multi-chain support with Wagmi, Privy, Hardhat and a chain picker (PR #57).</li>
+        </ul>
+      </li>
+      <li>Built Stripe payment and wallet flows for web apps.</li>
+      <li>Workflow: reproduce, find the root cause, agree a fixed scope, deliver on a branch with clear
+        documentation so the change is reviewed before merge.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Founder &amp; Lead Developer &middot; BeRegen</div>
+      <div class="job-meta">2023 &ndash; present &middot; Remote</div>
+    </div>
+    <div class="job-sub">Regenerative platforms for communities: learning, identity, governance and funding &middot; development paused pending funding; parts continued in Rastro</div>
+    <ul>
+      <li>Built and shipped RegenFlix (learning platform with Stripe payments), RegenImpactHub (identity and
+        impact validation, in beta) and the BeRegen app (daily practices, MVP).</li>
+      <li>Designed GOPR, an optimistic governance model based on reputation.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Owner &middot; Brincando em Fam&iacute;lia Ateli&ecirc; (now Jardim do Fazer)</div>
+      <div class="job-meta">2019 &ndash; present</div>
+    </div>
+    <div class="job-sub">Handcrafted wooden toys and furniture</div>
+    <ul>
+      <li>Ran the online store, the website and digital marketing, including customer-facing commerce and
+        Brazilian Portuguese content.</li>
+    </ul>
+  </div>
+
+  <h2>Mobile &amp; App Projects</h2>
+  <ul>
+    <li><b>Ritmo</b> &middot; Android task manager in pt-BR (Kotlin, Jetpack Compose, Room, Vosk). Offline voice
+      dictation after a model download, local-first storage, backup export. Published test APK builds on GitHub
+      releases (v1.7).</li>
+    <li><b>Prumo</b> &middot; Android app with a web companion (Kotlin, Jetpack Compose, TypeScript, Gemini):
+      guided diagnosis, personalized roadmap and AI coaching. Live at prumo.jardimdofazer.com.br.</li>
+    <li><b>Rastro</b> &middot; Offline-first React PWA that records activities without a connection and syncs when
+      it returns. Live.</li>
+    <li><b>Operator</b> &middot; Keyboard-first workspace with a persistent offline edit queue that syncs to
+      Supabase when the connection comes back.</li>
+  </ul>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <h2>Earlier Experience</h2>
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Train Operator &middot; Estrada de Ferro Campos do Jord&atilde;o</div>
+      <div class="job-meta">2015 &ndash; 2023</div>
+    </div>
+    <ul><li>Operated and troubleshot electromechanical systems under strict safety protocols.</li></ul>
+  </div>
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">Engineering Assistant &middot; Zodiac (pharmaceutical)</div>
+      <div class="job-meta">2010 &ndash; 2014</div>
+    </div>
+    <ul><li>Built cost-control and maintenance-order systems; documented processes.</li></ul>
+  </div>
+
+  <h2>Technical Skills</h2>
+  <div class="skill-row"><b>QA &amp; testing:</b> bug reproduction and root-cause analysis; bug reports with steps,
+    expected vs. actual results and environment; regression checks after fixes; manual testing of web, PWA and
+    Android builds; test-case writing; bug tracking in GitHub Issues, Linear, Notion and Trello.</div>
+  <div class="skill-row"><b>Mobile &amp; offline:</b> Android (Kotlin, Jetpack Compose, Room); iOS and Linux release of ClipVault; PWAs; offline-first
+    data, persistent sync queues, IndexedDB, local storage.</div>
+  <div class="skill-row"><b>Payments &amp; Web3:</b> Stripe API; wallet flows; EVM chains (Celo, Ethereum); Solidity
+    contract review; Farcaster mini apps.</div>
+  <div class="skill-row"><b>Web &amp; back end:</b> React, Next.js, TypeScript, Node.js, REST APIs, Supabase (Auth,
+    RLS), PostgreSQL, SQLite.</div>
+  <div class="skill-row"><b>Test &amp; tools:</b> Playwright (web test automation); GitHub (issues, pull requests, code
+    review), Git, Linear, Notion, Trello, n8n, Linux (daily driver), Netlify, Vercel, Docker.</div>
+  <div class="skill-row"><b>Languages:</b> TypeScript, JavaScript, Kotlin, Python, SQL, Solidity.</div>
+
+  <h2>Education</h2>
+  <div class="edu-row"><span><b>B.Sc. Production Engineering</b> &middot; FUNVIC</span><span class="r">2015</span></div>
+  <div class="edu-row"><span><b>Blockchain Developer with Solidity</b> &middot; DIO &times; Binance bootcamp</span><span class="r">2025</span></div>
+  <div class="edu-row"><span><b>CS50 (Introduction to Computer Science)</b> &middot; Harvard University, online</span><span class="r"></span></div>
+
+  <h2>Languages</h2>
+  <p>Portuguese &mdash; native (pt-BR) &nbsp;&middot;&nbsp; English &mdash; advanced, written and spoken</p>
+</div>
+
+</body>
+</html>
