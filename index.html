@@ -194,7 +194,7 @@ body{--header-height:52px;--footer-height:34px}
   <li>Freelance Full-Stack Developer · <a lang="en" href="./curriculos/Jorge_Cristo_Dev_Freelance_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Dev_Freelance_PT.html">Português</a></li>
   <li>Full-Stack Developer · <a lang="en" href="./curriculos/Jorge_Cristo_Dev_Empresas_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Dev_Empresas_PT.html">Português</a></li>
   <li>English to Brazilian Portuguese Translator · <a lang="en" href="./curriculos/Jorge_Cristo_Tradutor_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Tradutor_PT.html">Português</a></li>
-  <li>Mobile App QA Tester · <a lang="en" href="./curriculos/Jorge_Cristo_Mobile_QA_Tester_EN.html">English</a></li>
+  <li>Mobile App QA Tester · <a lang="en" href="./curriculos/Jorge_Cristo_Mobile_QA_Tester_EN.html">English</a> · <a lang="pt-BR" href="./curriculos/Jorge_Cristo_Mobile_QA_Tester_PT.html">Português</a></li>
   </ul>
 </section>
 </details>
@@ -252,7 +252,7 @@ const pt = {
   connect: 'Conectando ao servidor lunar…', connected: 'Conexão estabelecida.', loading: 'Carregando currículos…',
   intro: ['Oi, sou o Jorge.', 'Estabilizo aplicações, entrego funcionalidades e crio ferramentas Web3.', 'Escolha o currículo certo para você:'],
   choices: ['Freelance', 'Empresas', 'Tradução', 'QA Mobile'],
-  descriptions: ['Correções · integrações · Web3 · automação', 'Full-stack · produto · estabilização', 'EN → PT-BR · conteúdo digital e técnico', 'Testes Android · reprodução de bugs · CV em inglês'],
+  descriptions: ['Correções · integrações · Web3 · automação', 'Full-stack · produto · estabilização', 'EN → PT-BR · conteúdo digital e técnico', 'Testes Android · reprodução de bugs'],
   thanks: 'Obrigado pela visita!', contact: 'Quer entrar em contato? É só clicar abaixo para me enviar um e-mail.',
   hint: 'Digite help para ver os comandos',
   actionOpen: '1 Visualizar', actionDownload: '2 Baixar', previewDownload: 'Baixar PDF', actionShare: '3 Compartilhar',
@@ -477,9 +477,7 @@ function showResult(index) {
     chat.querySelector('#switch-cv').hidden = false;
     chat.querySelector('#back').textContent = copy.backMobile;
   }
-  const englishOnly = variants[selection] === 'mobile-qa';
-  chat.querySelector('[data-lang=PT]').hidden = englishOnly;
-  setLanguage(!englishOnly && isPortuguese ? 'PT' : 'EN');
+  setLanguage(isPortuguese ? 'PT' : 'EN');
 }
 
 function runCommand(value) {

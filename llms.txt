@@ -17,3 +17,4 @@
 - [Tradutor de inglês para português brasileiro (PT)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Tradutor_PT.html)
 - [English to Brazilian Portuguese Translator (EN)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Tradutor_EN.html)
 - [Mobile App QA Tester (EN)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Mobile_QA_Tester_EN.html)
+- [Tester de QA Mobile (PT)](https://j-c-fstk-dev.github.io/cvs/curriculos/Jorge_Cristo_Mobile_QA_Tester_PT.html)
